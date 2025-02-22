@@ -1,21 +1,66 @@
 <script lang="ts">
     import { page } from "$app/state";
     import logo from "$lib/images/gozar-productions-logo.svg";
-    import github from "$lib/images/github.svg";
+    import { type HeaderProps } from "$lib/types/types";
+    let { title, subtitle, pretitle, children }: HeaderProps = $props();
+
+    import { onMount } from "svelte";
+
+    const initialPadding = 100; // Initial height of the header
+    const finalPadding = 0;
+    let scrolled = $state(false); // Flag to determine if the header is sticky
+    let currentPadding = $state(initialPadding); // Current height of the header
+    let titleMultiplier = $state(1);
+    let miscTextMultiplier = $state(1);
+
+    onMount(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+
+            currentPadding = initialPadding - scrollY / 2; // Decrease height based on scroll
+            if (currentPadding <= finalPadding) {
+                currentPadding = finalPadding; // Ensure it doesn't go below 60px
+                scrolled = true;
+            } else {
+                scrolled = false;
+            }
+            miscTextMultiplier =
+                (currentPadding - finalPadding) /
+                (initialPadding - finalPadding);
+            titleMultiplier =
+                (currentPadding -
+                    finalPadding +
+                    (initialPadding - finalPadding) * 0.5 -
+                    (currentPadding - finalPadding) * 0.5) /
+                (initialPadding - finalPadding);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        // Cleanup the event listener on component destroy
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    });
 </script>
 
 <header>
-    <div class="corner">
-        <a href="/">
-            <img src={logo} alt="SvelteKit" />
-            Gozar Productions
-        </a>
+    <div class="bar {scrolled ? 'scrolled' : ''}">
+        <img src={logo} alt="Gozar Productions Logo" />
+        <hgroup
+            style="--header-padding: {currentPadding}px;--title-multiplier: {titleMultiplier}; --misc-text-multiplier: {miscTextMultiplier}"
+        >
+            {#if pretitle}
+                <span>{pretitle}</span>
+            {/if}
+            <h1>
+                {title}
+            </h1>
+            <h2>{subtitle}</h2>
+        </hgroup>
     </div>
 
-    <nav>
-        <svg viewBox="0 0 2 3" aria-hidden="true">
-            <path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-        </svg>
+    <nav class={scrolled ? "scrolled" : ""}>
         <ul>
             <li aria-current={page.url.pathname === "/" ? "page" : undefined}>
                 <a href="/">Home</a>
@@ -63,104 +108,120 @@
                 <a href="#donate">Donate</a>
             </li>
         </ul>
-        <svg viewBox="0 0 2 3" aria-hidden="true">
-            <path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-        </svg>
     </nav>
-
-    <!-- <div class="corner">
-        <a href="https://github.com/sveltejs/kit">
-            <img src={github} alt="GitHub" />
-        </a>
-    </div> -->
 </header>
+<section></section>
 
 <style>
+    section {
+        height: 400px;
+    }
     header {
-        display: flex;
-        justify-content: space-between;
+        z-index: 50;
     }
-
-    /* .corner {
-        width: 3em;
-        height: 3em;
-    } */
-
-    /* .corner a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    } */
-
-    .corner img {
-        width: 2em;
-        height: 2em;
-        object-fit: contain;
-    }
-
-    nav {
-        display: flex;
-        justify-content: center;
-        --background: rgba(255, 255, 255, 0.7);
-    }
-
-    svg {
-        width: 2em;
-        height: 3em;
-        display: block;
-    }
-
-    path {
-        fill: var(--background);
-    }
-
-    ul {
-        position: relative;
-        padding: 0;
-        margin: 0;
-        height: 3em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        background: var(--background);
-        background-size: contain;
-    }
-
-    li {
-        position: relative;
-        height: 100%;
-    }
-
-    li[aria-current="page"]::before {
-        --size: 6px;
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 0;
-        left: calc(50% - var(--size));
-        border: var(--size) solid transparent;
-        border-top: var(--size) solid var(--color-theme-1);
-    }
-
-    nav a {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        padding: 0 0.5rem;
-        color: var(--color-text);
-        font-weight: 700;
-        font-size: 0.8rem;
+    div.bar {
+        position: fixed;
+        transition:
+            height 0.3s,
+            background-color 0.3s;
         text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-decoration: none;
-        transition: color 0.2s linear;
+        text-align: center;
+        color: white;
+        text-shadow:
+            0 0 5em black,
+            0 0 7em black,
+            0 0 9em black;
+        /* line-height: 1rem; */
+        width: 100%;
+        top: 0;
+
+        display: inline-flex;
+        align-self: center;
+        align-content: center;
+        align-items: center;
     }
 
-    a:hover {
-        color: var(--color-theme-1);
+    div.bar.scrolled {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    hgroup > span:first-child {
+        position: relative;
+        z-index: 10;
+    }
+    hgroup {
+        margin-right: auto;
+        padding: var(--header-padding) 0px;
+        height: 100%;
+        display: flex; /* Use flexbox for hgroup */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        height: 100%; /* Ensure it takes full height */
+    }
+
+    div.bar span:first-child,
+    div.bar h2 {
+        height: calc(1em * var(--misc-text-multiplier));
+        overflow: visible;
+        opacity: 1;
+        transition:
+            opacity 0.3s,
+            margin 0.3s;
+        margin: 1rem 0px;
+    }
+
+    div.bar.scrolled h2,
+    div.bar.scrolled span:first-child {
+        opacity: 0;
+        margin: 0px;
+        font-size: 0px;
+    }
+
+    div.bar h1 {
+        font-size: calc(4rem * var(--title-multiplier));
+        line-height: 1em;
+        margin: 1rem 0px 0.5rem;
+        transition:
+            margin 0.3s,
+            color 0.3s;
+    }
+
+    div.bar.scrolled h1 {
+        color: black;
+        margin: 0px;
+    }
+
+    div.bar > img {
+        aspect-ratio: 1/1;
+        vertical-align: middle;
+        /* transform: translate(0px, -4px); */
+        margin: 1em auto;
+        margin-right: 0.5em;
+        opacity: 1;
+        width: 3rem;
+        transition:
+            opacity 0.3s,
+            width 0.3s,
+            margin-right 0.3s;
+    }
+    div.bar:not(.scrolled) img {
+        width: 0px;
+        margin-right: 0px;
+        opacity: 0;
+        transition:
+            opacity 0.3s,
+            width 0.3s,
+            margin-right 0.3s;
+    }
+
+    nav:not(.scrolled) {
+        display: none;
+    }
+
+    nav.scrolled {
+        position: fixed;
+        top: 0px;
+        right: 0px;
     }
 </style>

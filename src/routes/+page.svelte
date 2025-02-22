@@ -1,5 +1,7 @@
 <script lang="ts">
     import Button from "./Button.svelte";
+    import Section from "./Section.svelte";
+    import { SectionType, TextColor } from "$lib/types/types";
     import Counter from "./Counter.svelte";
     import welcome from "$lib/images/svelte-welcome.webp";
     import welcomeFallback from "$lib/images/svelte-welcome.png";
@@ -30,75 +32,58 @@
     <meta property="og:type" content="website" />
 </svelte:head>
 
-<section class="page-header">
-    <hgroup class="page-header">
-        <span>Welcome to</span>
-        <h1>Gozar Productions</h1>
-        <h2>Where passion takes flight</h2>
-    </hgroup>
+<Section id="about" type={SectionType.First} textColor={TextColor.Black}>
+    <h2>Who we are</h2>
+    <p>
+        Gozar Productions is a small film company on YouTube creating short
+        films and music videos with a passion for music. Birthed from a young
+        girl's aspirations and pet projects, this small company endeavors to
+        share our passions with the world for all to enjoy.
+    </p>
+</Section>
 
-    <!-- <Counter /> -->
-</section>
+<Section
+    id="watch"
+    type={SectionType.Video}
+    backgroundSource="/watch-background.mp4"
+    textColor={TextColor.White}
+>
+    <h2>Watch us on YouTube</h2>
+    <p>
+        We believe in keeping our content as accessible as possible, even if it
+        means less money for us. The best way to do that is through YouTube,
+        where you can find all the videos we've made throughout the years.
+    </p>
+    <Button link="https://youtube.com/GozarProductions">Watch us now</Button>
+</Section>
 
-<section id="about">
-    <div>
-        <h2>Who we are</h2>
-        <p>
-            Gozar Productions is a small film company on YouTube creating short
-            films and music videos with a passion for music. Birthed from a
-            young girl's aspirations and pet projects, this small company
-            endeavors to share our passions with the world for all to enjoy.
-        </p>
-    </div>
-</section>
+<Section
+    id="music"
+    type={SectionType.Image}
+    backgroundSource="/music-background.png"
+    textColor={TextColor.Black}
+>
+    <h2>Our music</h2>
+    <p>
+        The genius behind our original music is the mind of a young girl named
+        Erika Gozar. She writes all of our original scores with simply an ear
+        for music and no formal training in composition.
+    </p>
+    <Button link="https://www.gozarproductions.com/erika-gozar"
+        >Listen now</Button
+    >
+</Section>
 
-<section id="watch">
-    <div>
-        <h2>Watch us on YouTube</h2>
-        <p>
-            We believe in keeping our content as accessible as possible, even if
-            it means less money for us. The best way to do that is through
-            YouTube, where you can find all the videos we've made throughout the
-            years.
-        </p>
-        <Button>Watch us now</Button>
-    </div>
-</section>
+<Section id="code" type={SectionType.Image} textColor={TextColor.Black}>
+    <h2>Our code</h2>
+    <p>
+        Along with our musical and cinematic endeavors, we also create a number
+        of code-based tools, ranging from Discord bots to VR aids. We aim to
+        make our projects free for anyone to use.
+    </p>
+    <Button link="https://github.com/Erallie">View our projects</Button>
+</Section>
 
-<section id="music">
-    <div>
-        <h2>Our music</h2>
-        <p>
-            The genius behind our original music is the mind of a young girl
-            named Erika Gozar. She writes all of our original scores with simply
-            an ear for music and no formal training in composition.
-        </p>
-        <Button>Listen now</Button>
-    </div>
-</section>
-
-<section id="code">
-    <div>
-        <h2>Our code</h2>
-        <p>
-            Along with our musical and cinematic endeavors, we also create a
-            number of code-based tools, ranging from Discord bots to VR aids. We
-            aim to make our projects free for anyone to use.
-        </p>
-        <Button>View our projects</Button>
-    </div>
-</section>
-
-<section id="contact">
+<Section id="contact" type={SectionType.White} textColor={TextColor.Black}>
     <h2>Contact us</h2>
-</section>
-
-<style>
-    section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex: 0.6;
-    }
-</style>
+</Section>
