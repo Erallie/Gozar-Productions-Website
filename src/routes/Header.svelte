@@ -164,7 +164,7 @@
     div.bar h2 {
         height: calc(1em * var(--misc-text-multiplier));
         overflow: visible;
-        opacity: 1;
+        opacity: calc(1 * var(--misc-text-multiplier));
         transition:
             opacity 0.3s,
             margin 0.3s;
@@ -173,7 +173,6 @@
 
     div.bar.scrolled h2,
     div.bar.scrolled span:first-child {
-        opacity: 0;
         margin: 0px;
         font-size: 0px;
     }
@@ -197,9 +196,9 @@
         vertical-align: middle;
         /* transform: translate(0px, -4px); */
         margin: 1em auto;
-        margin-right: 0.5em;
+        margin-right: 0.8em;
         opacity: 1;
-        width: 3rem;
+        width: 3.5rem;
         transition:
             opacity 0.3s,
             width 0.3s,

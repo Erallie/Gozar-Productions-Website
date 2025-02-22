@@ -1,7 +1,7 @@
 <script lang="ts">
     import logo from "$lib/images/button-arrow.svg";
     import { type ButtonProps } from "$lib/types/types";
-    let { link, children }: ButtonProps = $props();
+    let { link, customSVG, children }: ButtonProps = $props();
 
     // Function to determine if the link is absolute
     function isAbsoluteUrl(url: string) {
@@ -16,18 +16,24 @@
 >
     <button>
         {@render children()}
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="200"
-            height="60"
-            viewBox="0 0 200 60"
-        >
-            <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
-                <line x1="2.5" y1="30" x2="197.5" y2="30 " />
-                <line x1="197.5" y1="30" x2="160" y2="2.5" />
-                <line x1="197.5" y1="30" x2="160" y2="57.5" />
-            </g>
-        </svg>
+        {#if !customSVG}
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="200"
+                height="60"
+                viewBox="0 0 200 60"
+            >
+                <g
+                    stroke="currentColor"
+                    stroke-width="5"
+                    stroke-linecap="round"
+                >
+                    <line x1="2.5" y1="30" x2="197.5" y2="30 " />
+                    <line x1="197.5" y1="30" x2="160" y2="2.5" />
+                    <line x1="197.5" y1="30" x2="160" y2="57.5" />
+                </g>
+            </svg>
+        {/if}
     </button>
 </a>
 
@@ -51,7 +57,7 @@
 
     button > svg {
         width: auto;
-        aspect-ratio: 200 / 60;
+        /* aspect-ratio: 200 / 60; */
         height: 0.8em;
         vertical-align: middle; /* This can be removed with flexbox */
         transform: translate(0, -1px);

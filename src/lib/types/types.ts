@@ -20,6 +20,7 @@ export type SectionProps = {
 
 export type ButtonProps = {
     link: string;
+    customSVG?: boolean;
     children: any;
 }
 
