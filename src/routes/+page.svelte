@@ -84,7 +84,7 @@
     <p>
         Along with our musical and cinematic endeavors, we also create a number
         of code-based tools, ranging from Discord bots to VR aids. We aim to
-        make our projects free for anyone to use.
+        make our projects free for all to use.
     </p>
     <Button link="https://github.com/Erallie">View our projects</Button>
 </Section>
