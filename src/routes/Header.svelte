@@ -2,32 +2,47 @@
     import { page } from "$app/state";
     import logo from "$lib/images/gozar-productions-logo.svg";
     import { type HeaderProps } from "$lib/types/types";
-    let { title, subtitle, pretitle, children }: HeaderProps = $props();
-
     import { onMount } from "svelte";
+
+    let { title, subtitle, pretitle, children }: HeaderProps = $props();
 
     const initialPadding = 100; // Initial height of the header
     const finalPadding = 0;
     let scrolled = $state(false); // Flag to determine if the header is sticky
     let currentPadding = $state(initialPadding); // Current height of the header
-    let textMultiplier = $state(1);
+    let textMultiplier = $state(1); // Multiplier for text size
 
-    onMount(() => {
-        const handleScroll = () => {
-            const scrollY = window.scrollY;
+    let ticking = false; // Flag to indicate if a scroll event is being processed
 
-            currentPadding = initialPadding - scrollY / 2; // Decrease height based on scroll
-            if (currentPadding <= finalPadding) {
-                currentPadding = finalPadding; // Ensure it doesn't go below 60px
-                scrolled = true;
-            } else {
-                scrolled = false;
-            }
+    // Function to handle scroll updates
+    const updateScroll = () => {
+        const scrollY = window.scrollY;
+
+        // Calculate new padding based on scroll position
+        const newPadding = Math.max(finalPadding, initialPadding - scrollY / 2);
+
+        // Only update if the value has changed
+        if (newPadding !== currentPadding) {
+            currentPadding = newPadding; // Update only if changed
+            scrolled = currentPadding <= finalPadding; // Update scrolled flag
             textMultiplier =
                 (currentPadding - finalPadding) /
                 (initialPadding - finalPadding);
-        };
+        }
 
+        // Reset the ticking flag
+        ticking = false;
+    };
+
+    // Scroll event handler
+    const handleScroll = () => {
+        if (!ticking) {
+            ticking = true; // Set the ticking flag to true
+            window.requestAnimationFrame(updateScroll);
+        }
+    };
+
+    onMount(() => {
         window.addEventListener("scroll", handleScroll);
 
         // Cleanup the event listener on component destroy
@@ -41,14 +56,12 @@
     <div class="bar {scrolled ? 'scrolled' : ''}">
         <img src={logo} alt="Gozar Productions Logo" />
         <hgroup
-            style="--header-padding: {currentPadding}px;--current-padding: {currentPadding}; --text-multiplier: {textMultiplier};--initial-padding: {initialPadding}; --final-padding: {finalPadding}"
+            style="--header-padding: {currentPadding}px; --current-padding: {currentPadding}; --text-multiplier: {textMultiplier}; --initial-padding: {initialPadding}; --final-padding: {finalPadding}"
         >
             {#if pretitle}
                 <span>{pretitle}</span>
             {/if}
-            <h1>
-                {title}
-            </h1>
+            <h1>{title}</h1>
             <h2>{subtitle}</h2>
         </hgroup>
     </div>
@@ -121,17 +134,11 @@
         text-transform: uppercase;
         text-align: center;
         color: white;
-        text-shadow:
-            0 0 5em black,
-            0 0 7em black,
-            0 0 9em black;
-        /* line-height: 1rem; */
+        text-shadow: 0 0 5em black;
         width: 100%;
         top: 0;
 
         display: inline-flex;
-        align-self: center;
-        align-content: center;
         align-items: center;
     }
 
@@ -146,14 +153,16 @@
     }
     hgroup {
         margin-right: auto;
-        padding: var(--header-padding) 0px;
+        padding: 0px;
+        padding-top: var(--header-padding);
+        padding-bottom: var(--header-padding);
+        will-change: padding-top, padding-bottom;
         max-width: 80%;
         height: 100%;
-        display: flex; /* Use flexbox for hgroup */
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center items horizontally */
-        justify-content: center; /* Center items vertically */
-        height: 100%; /* Ensure it takes full height */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     div.bar span:first-child,
@@ -163,13 +172,18 @@
         opacity: var(--text-multiplier);
         transition:
             opacity 0.3s,
-            margin 0.3s;
-        margin: 1rem 0px;
+            margin-top 0.3s,
+            margin-bottom 0.3s;
+        margin: 0px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        will-change: height, opacity, margin-top, margin-bottom;
     }
 
     div.bar.scrolled h2,
     div.bar.scrolled span:first-child {
-        margin: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
         font-size: 0px;
     }
 
@@ -188,13 +202,6 @@
                         (var(--initial-padding) - var(--final-padding))
                 )
         );
-        /* font-size: calc(
-            (var(--font-size-initial) * (var(--header-padding) - 0) / (100 - 0)) +
-                (
-                    var(--font-size-final) * (100 - var(--header-padding)) /
-                        (100 - 0)
-                )
-        ); */
         line-height: 1em;
         margin: 1rem 0px 0.5rem;
         transition:
@@ -210,7 +217,6 @@
     div.bar > img {
         aspect-ratio: 1/1;
         vertical-align: middle;
-        /* transform: translate(0px, -4px); */
         margin: 1em auto;
         margin-right: 0.8em;
         opacity: 1;
