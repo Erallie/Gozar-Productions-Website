@@ -87,10 +87,8 @@
     section.image,
     section.video {
         text-shadow:
-            0 0 1em rgb(var(--shadow-color)),
             0 0 2em rgb(var(--shadow-color)),
-            0 0 3em rgb(var(--shadow-color)),
-            0 0 4em rgb(var(--shadow-color));
+            0 0 3em rgb(var(--shadow-color));
     }
 
     section.video {
