@@ -19,7 +19,10 @@
         const scrollY = window.scrollY;
 
         // Calculate new padding based on scroll position
-        const newPadding = Math.max(finalPadding, initialPadding - scrollY / 2);
+        const newPadding = Math.max(
+            finalPadding,
+            initialPadding - scrollY / 3.25,
+        );
 
         // Only update if the value has changed
         if (newPadding !== currentPadding) {
@@ -44,6 +47,7 @@
 
     onMount(() => {
         window.addEventListener("scroll", handleScroll);
+        updateScroll();
 
         // Cleanup the event listener on component destroy
         return () => {
@@ -54,67 +58,72 @@
 
 <header>
     <div class="bar {scrolled ? 'scrolled' : ''}">
-        <img src={logo} alt="Gozar Productions Logo" />
-        <hgroup
-            style="--header-padding: {currentPadding}px; --current-padding: {currentPadding}; --text-multiplier: {textMultiplier}; --initial-padding: {initialPadding}; --final-padding: {finalPadding}"
-        >
-            {#if pretitle}
-                <span>{pretitle}</span>
-            {/if}
-            <h1>{title}</h1>
-            <h2>{subtitle}</h2>
-        </hgroup>
+        <div>
+            <img src={logo} alt="Gozar Productions Logo" />
+            <hgroup
+                style="--header-padding: {currentPadding}px; --current-padding: {currentPadding}; --text-multiplier: {textMultiplier}; --initial-padding: {initialPadding}; --final-padding: {finalPadding}"
+            >
+                {#if pretitle}
+                    <span>{pretitle}</span>
+                {/if}
+                <h1>{title}</h1>
+                <h2>{subtitle}</h2>
+            </hgroup>
+        </div>
+        <nav class={scrolled ? "scrolled" : ""}>
+            <ul>
+                <li
+                    aria-current={page.url.pathname === "/"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="/">Home</a>
+                </li>
+                <li
+                    aria-current={page.url.pathname === "#about"
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="#about">About</a>
+                </li>
+                <li
+                    aria-current={page.url.pathname.startsWith("#watch")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="#watch">Watch</a>
+                </li>
+                <li
+                    aria-current={page.url.pathname.startsWith("#music")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="#music">Our Music</a>
+                </li>
+                <li
+                    aria-current={page.url.pathname.startsWith("#code")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="#code">Our Code</a>
+                </li>
+                <li
+                    aria-current={page.url.pathname.startsWith("#contact")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="#contact">Contact</a>
+                </li>
+                <li
+                    aria-current={page.url.pathname.startsWith("#donate")
+                        ? "page"
+                        : undefined}
+                >
+                    <a href="#donate">Donate</a>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-    <nav class={scrolled ? "scrolled" : ""}>
-        <ul>
-            <li aria-current={page.url.pathname === "/" ? "page" : undefined}>
-                <a href="/">Home</a>
-            </li>
-            <li
-                aria-current={page.url.pathname === "#about"
-                    ? "page"
-                    : undefined}
-            >
-                <a href="#about">About</a>
-            </li>
-            <li
-                aria-current={page.url.pathname.startsWith("#watch")
-                    ? "page"
-                    : undefined}
-            >
-                <a href="#watch">Watch</a>
-            </li>
-            <li
-                aria-current={page.url.pathname.startsWith("#music")
-                    ? "page"
-                    : undefined}
-            >
-                <a href="#music">Our Music</a>
-            </li>
-            <li
-                aria-current={page.url.pathname.startsWith("#code")
-                    ? "page"
-                    : undefined}
-            >
-                <a href="#code">Our Code</a>
-            </li>
-            <li
-                aria-current={page.url.pathname.startsWith("#contact")
-                    ? "page"
-                    : undefined}
-            >
-                <a href="#contact">Contact</a>
-            </li>
-            <li
-                aria-current={page.url.pathname.startsWith("#donate")
-                    ? "page"
-                    : undefined}
-            >
-                <a href="#donate">Donate</a>
-            </li>
-        </ul>
-    </nav>
 </header>
 <section></section>
 
@@ -128,18 +137,22 @@
     div.bar {
         position: fixed;
         transition:
-            height 0.3s,
-            background-color 0.3s,
-            text-shadow 0.3s;
+            height 1s,
+            background-color 1s,
+            text-shadow 1s;
         text-transform: uppercase;
         text-align: center;
         color: white;
-        text-shadow: 0 0 5em black;
+        text-shadow: 0 0 4em black;
         width: 100%;
         top: 0;
-
+        /* display: inline-flex;
+        align-items: center; */
+    }
+    div.bar > div {
         display: inline-flex;
         align-items: center;
+        flex-grow: 1;
     }
 
     div.bar.scrolled {
@@ -157,7 +170,7 @@
         padding-top: var(--header-padding);
         padding-bottom: var(--header-padding);
         will-change: padding-top, padding-bottom;
-        max-width: 80%;
+        max-width: 80dvw;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -171,13 +184,13 @@
         overflow: visible;
         opacity: var(--text-multiplier);
         transition:
-            opacity 0.3s,
-            margin-top 0.3s,
-            margin-bottom 0.3s;
+            margin-top 1s,
+            margin-bottom 1s,
+            font-size 1s;
         margin: 0px;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        will-change: height, opacity, margin-top, margin-bottom;
+        will-change: height, opacity, margin-top, margin-bottom, font-size;
     }
 
     div.bar.scrolled h2,
@@ -185,6 +198,10 @@
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 0px;
+        transition:
+            margin-top 1s,
+            margin-bottom 1s,
+            font-size 1s;
     }
 
     div.bar h1 {
@@ -203,18 +220,23 @@
                 )
         );
         line-height: 1em;
-        margin: 1rem 0px 0.5rem;
+        margin: 0px;
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
         transition:
-            margin 0.3s,
-            color 0.3s;
+            margin-top 1s,
+            margin-bottom 1s,
+            color 1s;
+        will-change: font-size, margin-top, margin-bottom, color;
     }
 
     div.bar.scrolled h1 {
         color: black;
-        margin: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
     }
 
-    div.bar > img {
+    div.bar img {
         aspect-ratio: 1/1;
         vertical-align: middle;
         margin: 1em auto;
@@ -222,27 +244,93 @@
         opacity: 1;
         width: 3.5rem;
         transition:
-            opacity 0.3s,
-            width 0.3s,
-            margin-right 0.3s;
+            opacity 1s,
+            width 1s,
+            margin-right 1s;
+        will-change: opacity, width, margin-right;
     }
     div.bar:not(.scrolled) img {
         width: 0px;
         margin-right: 0px;
         opacity: 0;
         transition:
-            opacity 0.3s,
-            width 0.3s,
-            margin-right 0.3s;
+            opacity 1s,
+            width 1s,
+            margin-right 1s;
+        will-change: opacity, width, margin-right;
+    }
+
+    nav {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        flex-basis: auto;
+        transition: background-color 1s;
+        will-change: background-color;
     }
 
     nav:not(.scrolled) {
-        display: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        will-change: background-color;
     }
 
-    nav.scrolled {
-        position: fixed;
-        top: 0px;
-        right: 0px;
+    ul {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        height: 3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        flex-grow: 1;
+    }
+
+    li {
+        position: relative;
+        height: 100%;
+        border-top-style: solid;
+        border-top-color: rgba(0, 0, 0, 1);
+        border-top-width: 1px;
+        transition: border-top-color 1s;
+        will-change: border-top-color;
+    }
+    nav:not(.scrolled) li {
+        border-top-color: rgba(0, 0, 0, 0);
+        border-top-width: 0px;
+        transition:
+            border-top-color 0.3s,
+            border-top-width 0.3s;
+        will-change: border-top-color, border-top-width;
+    }
+
+    li[aria-current="page"]::before {
+        --size: 6px;
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: 0;
+        left: calc(50% - var(--size));
+        border: var(--size) solid transparent;
+        border-top: var(--size) solid var(--color-theme-1);
+    }
+
+    nav a {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        padding: 0 0.5rem;
+        color: black;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        transition: background-color 0.2s linear;
+    }
+
+    a:hover {
+        background-color: rgba(0, 0, 0, 0.2);
     }
 </style>
