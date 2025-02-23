@@ -2,9 +2,6 @@
     import Button from "./Button.svelte";
     import Section from "./Section.svelte";
     import { SectionType, TextColor } from "$lib/types/types";
-    import Counter from "./Counter.svelte";
-    import welcome from "$lib/images/svelte-welcome.webp";
-    import welcomeFallback from "$lib/images/svelte-welcome.png";
 </script>
 
 <svelte:head>
