@@ -74,7 +74,12 @@
     >
 </Section>
 
-<Section id="code" type={SectionType.Image} textColor={TextColor.Black}>
+<Section
+    id="code"
+    type={SectionType.Image}
+    textColor={TextColor.White}
+    backgroundSource="/code-background.png"
+>
     <h2>Our code</h2>
     <p>
         Along with our musical and cinematic endeavors, we also create a number
@@ -127,7 +132,12 @@
     >
 </Section>
 
-<Section id="donate" type={SectionType.Image} textColor={TextColor.White}>
+<Section
+    id="donate"
+    type={SectionType.Image}
+    textColor={TextColor.White}
+    backgroundSource="/donate-background.png"
+>
     <h2>Donate</h2>
     <p>
         Being a small company, we don't really make any money. So it's difficult
