@@ -116,7 +116,8 @@
         position: fixed;
         transition:
             height 0.3s,
-            background-color 0.3s;
+            background-color 0.3s,
+            text-shadow 0.3s;
         text-transform: uppercase;
         text-align: center;
         color: white;
@@ -136,6 +137,7 @@
 
     div.bar.scrolled {
         background-color: rgba(255, 255, 255, 0.8);
+        text-shadow: none;
     }
 
     hgroup > span:first-child {
