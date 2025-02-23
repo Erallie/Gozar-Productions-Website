@@ -10,8 +10,7 @@
     const finalPadding = 0;
     let scrolled = $state(false); // Flag to determine if the header is sticky
     let currentPadding = $state(initialPadding); // Current height of the header
-    let titleMultiplier = $state(1);
-    let miscTextMultiplier = $state(1);
+    let textMultiplier = $state(1);
 
     onMount(() => {
         const handleScroll = () => {
@@ -24,15 +23,9 @@
             } else {
                 scrolled = false;
             }
-            miscTextMultiplier =
+            textMultiplier =
                 (currentPadding - finalPadding) /
                 (initialPadding - finalPadding);
-            /* titleMultiplier =
-                (currentPadding -
-                    finalPadding +
-                    (initialPadding - finalPadding) * 0.5 -
-                    (currentPadding - finalPadding) * 0.5) /
-                (initialPadding - finalPadding); */
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -48,7 +41,7 @@
     <div class="bar {scrolled ? 'scrolled' : ''}">
         <img src={logo} alt="Gozar Productions Logo" />
         <hgroup
-            style="--header-padding: {currentPadding}px;--current-padding: {currentPadding}; --misc-text-multiplier: {miscTextMultiplier};--initial-padding: {initialPadding}; --final-padding: {finalPadding}"
+            style="--header-padding: {currentPadding}px;--current-padding: {currentPadding}; --text-multiplier: {textMultiplier};--initial-padding: {initialPadding}; --final-padding: {finalPadding}"
         >
             {#if pretitle}
                 <span>{pretitle}</span>
@@ -163,9 +156,9 @@
 
     div.bar span:first-child,
     div.bar h2 {
-        height: calc(1em * var(--misc-text-multiplier));
+        height: calc(1em * var(--text-multiplier));
         overflow: visible;
-        opacity: calc(1 * var(--misc-text-multiplier));
+        opacity: var(--text-multiplier);
         transition:
             opacity 0.3s,
             margin 0.3s;
