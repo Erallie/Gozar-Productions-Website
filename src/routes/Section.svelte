@@ -49,8 +49,6 @@
 
 <style>
     section {
-        --text-color: 0, 0, 0;
-        --shadow-color: 255, 255, 255;
         color: rgb(var(--text-color));
         width: 100%;
         padding: 5rem 0px;
