@@ -9,7 +9,9 @@
     let { id, type, backgroundSource, textColor, children }: SectionProps =
         $props();
 
+    // svelte-ignore non_reactive_update
     let color: string;
+    // svelte-ignore non_reactive_update
     let shadowColor: string;
     switch (textColor) {
         case TextColor.White:
