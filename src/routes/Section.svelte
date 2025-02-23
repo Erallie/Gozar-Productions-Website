@@ -117,4 +117,8 @@
         text-align: center; /* Center the text */
         padding: 20px; /* Add some padding */
     }
+
+    section:not(.first) {
+        scroll-margin-top: 100px;
+    }
 </style>
