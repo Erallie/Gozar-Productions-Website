@@ -93,7 +93,10 @@
     <h2>Contact us</h2>
     <p>We're always here to answer your questions!</p>
 
-    <Button link="https://discord.gg/cCCEk7BX4W" customSVG
+    <Button
+        link="https://discord.gg/cCCEk7BX4W"
+        customSVG
+        marginBottomMultiplier={0.5}
         >Join our Discord<svg
             xmlns="http://www.w3.org/2000/svg"
             width="127.14px"
@@ -105,7 +108,10 @@
             />
         </svg></Button
     >
-    <Button link="mailto:contact@gozarproductions.com" customSVG
+    <Button
+        link="mailto:contact@gozarproductions.com"
+        customSVG
+        marginTopMultiplier={0.5}
         >Send an email
         <svg
             width="20px"

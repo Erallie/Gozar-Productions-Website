@@ -21,6 +21,8 @@ export type SectionProps = {
 export type ButtonProps = {
     link: string;
     customSVG?: boolean;
+    marginTopMultiplier?: number;
+    marginBottomMultiplier?: number;
     children: any;
 }
 

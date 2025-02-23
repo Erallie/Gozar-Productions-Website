@@ -1,7 +1,13 @@
 <script lang="ts">
     import logo from "$lib/images/button-arrow.svg";
     import { type ButtonProps } from "$lib/types/types";
-    let { link, customSVG, children }: ButtonProps = $props();
+    let {
+        link,
+        customSVG,
+        marginTopMultiplier,
+        marginBottomMultiplier,
+        children,
+    }: ButtonProps = $props();
 
     // Function to determine if the link is absolute
     function isAbsoluteUrl(url: string) {
@@ -14,7 +20,13 @@
     target={isAbsoluteUrl(link) ? "_blank" : undefined}
     style="text-decoration: none;"
 >
-    <button>
+    <button
+        style="--margin-top-multiplier: {marginTopMultiplier
+            ? `${marginTopMultiplier}`
+            : '1'}; --margin-bottom-multiplier: {marginBottomMultiplier
+            ? `${marginBottomMultiplier}`
+            : '1'}"
+    >
         {@render children()}
         {#if !customSVG}
             <svg
@@ -51,7 +63,8 @@
         letter-spacing: 0.25em;
         text-transform: uppercase;
         font-size: 15px;
-        margin: 20px;
+        margin: calc(20px * var(--margin-top-multiplier)) 20px
+            calc(20px * var(--margin-bottom-multiplier));
         transition: background-color 0.3s;
     }
 
