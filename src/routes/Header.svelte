@@ -27,12 +27,12 @@
             miscTextMultiplier =
                 (currentPadding - finalPadding) /
                 (initialPadding - finalPadding);
-            titleMultiplier =
+            /* titleMultiplier =
                 (currentPadding -
                     finalPadding +
                     (initialPadding - finalPadding) * 0.5 -
                     (currentPadding - finalPadding) * 0.5) /
-                (initialPadding - finalPadding);
+                (initialPadding - finalPadding); */
         };
 
         window.addEventListener("scroll", handleScroll);
@@ -48,7 +48,7 @@
     <div class="bar {scrolled ? 'scrolled' : ''}">
         <img src={logo} alt="Gozar Productions Logo" />
         <hgroup
-            style="--header-padding: {currentPadding}px;--title-multiplier: {titleMultiplier}; --misc-text-multiplier: {miscTextMultiplier}"
+            style="--header-padding: {currentPadding}px;--current-padding: {currentPadding}; --misc-text-multiplier: {miscTextMultiplier};--initial-padding: {initialPadding}; --final-padding: {finalPadding}"
         >
             {#if pretitle}
                 <span>{pretitle}</span>
@@ -152,6 +152,7 @@
     hgroup {
         margin-right: auto;
         padding: var(--header-padding) 0px;
+        max-width: 80%;
         height: 100%;
         display: flex; /* Use flexbox for hgroup */
         flex-direction: column; /* Stack items vertically */
@@ -178,7 +179,27 @@
     }
 
     div.bar h1 {
-        font-size: calc(4rem * var(--title-multiplier));
+        --font-size-initial: 8.5vw;
+        --font-size-final: 2rem;
+        font-size: calc(
+            (
+                    var(--font-size-initial) *
+                        (var(--current-padding) - var(--final-padding)) /
+                        (var(--initial-padding) - var(--final-padding))
+                ) +
+                (
+                    var(--font-size-final) *
+                        (var(--initial-padding) - var(--current-padding)) /
+                        (var(--initial-padding) - var(--final-padding))
+                )
+        );
+        /* font-size: calc(
+            (var(--font-size-initial) * (var(--header-padding) - 0) / (100 - 0)) +
+                (
+                    var(--font-size-final) * (100 - var(--header-padding)) /
+                        (100 - 0)
+                )
+        ); */
         line-height: 1em;
         margin: 1rem 0px 0.5rem;
         transition:
