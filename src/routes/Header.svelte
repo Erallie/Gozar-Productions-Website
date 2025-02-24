@@ -3,7 +3,11 @@
     import logo from "$lib/images/gozar-productions-logo.svg";
     import { type HeaderProps } from "$lib/types/types";
     import { onMount } from "svelte";
-    import { barInitialHeight, barFinalHeight } from "./stores";
+    import {
+        barInitialHeight,
+        barFinalHeight,
+        initialHeightSet,
+    } from "./stores";
 
     let { title, subtitle, pretitle, children }: HeaderProps = $props();
 
@@ -39,6 +43,14 @@
                     const headerBar = document.getElementById("header-bar");
                     barFinalHeight.set(headerBar!.offsetHeight);
                 }, 100);
+            } else if (!$initialHeightSet && scrollY == 0) {
+                setTimeout(() => {
+                    if (scrollY == 0) {
+                        const headerBar = document.getElementById("header-bar");
+                        barInitialHeight.set(headerBar!.offsetHeight);
+                        initialHeightSet.set(true);
+                    }
+                }, 100);
             }
         }
 
@@ -54,17 +66,15 @@
         }
     };
 
-    onMount(() => {
-        if ($barInitialHeight == 0) {
-            const headerBar = document.getElementById("header-bar");
-            barInitialHeight.set(headerBar!.offsetHeight);
-        }
-    });
-
     $effect(() => {
         const relativeUrl = page.url.pathname;
 
         if (relativeUrl === "/" || relativeUrl === "") {
+            if (!$initialHeightSet && window.scrollY == 0) {
+                const headerBar = document.getElementById("header-bar");
+                barInitialHeight.set(headerBar!.offsetHeight);
+                initialHeightSet.set(true);
+            }
             isHome = true;
             window.addEventListener("scroll", handleScroll);
             updateScroll();
