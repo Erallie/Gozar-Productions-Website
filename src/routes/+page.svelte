@@ -190,7 +190,10 @@
         text-transform: uppercase;
         flex-grow: 0;
         flex-shrink: 0;
-        margin: 20px auto;
+        margin: auto;
+    }
+    div.columns > * {
+        padding: 20px 0px;
     }
     div.columns h3 {
         /* text-transform: uppercase; */
