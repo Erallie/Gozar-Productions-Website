@@ -63,7 +63,7 @@
         text-align: center;
         letter-spacing: 0.25em;
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 0.95rem;
         margin: calc(20px * var(--margin-top-multiplier)) 20px
             calc(20px * var(--margin-bottom-multiplier));
         transition: background-color 0.3s;

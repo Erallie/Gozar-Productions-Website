@@ -208,7 +208,7 @@
         z-index: 10;
     }
     hgroup {
-        margin-right: auto;
+        margin-right: 1rem;
         padding: 0px;
         padding-top: var(--header-padding);
         padding-bottom: var(--header-padding);
@@ -235,6 +235,7 @@
         margin: 0px;
         margin-top: 1rem;
         margin-bottom: 1rem;
+        line-height: 1em;
         will-change: height, opacity, margin-top, margin-bottom, font-size,
             text-shadow;
     }
@@ -253,8 +254,8 @@
     }
 
     #header-bar h1 {
-        --font-size-initial: 8.5vw;
-        --font-size-final: 2rem;
+        --font-size-initial: max(8.5vw, 2rem);
+        --font-size-final: min(2rem, 8.5vw);
         font-size: calc(
             (
                     var(--font-size-initial) *
@@ -268,7 +269,8 @@
                 )
         );
         line-height: 1em;
-        margin: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         text-shadow: 0 0 3rem black;
@@ -290,7 +292,7 @@
     #header-bar img {
         aspect-ratio: 1/1;
         vertical-align: middle;
-        margin: 1em auto;
+        margin: 1em 1rem;
         margin-right: 0.8em;
         opacity: 1;
         width: 3.5rem;
@@ -320,6 +322,7 @@
         transition: background-color 1s;
         will-change: background-color;
         text-shadow: none;
+        word-break: keep-all;
     }
 
     nav:not(.scrolled) {
@@ -384,5 +387,25 @@
 
     a:hover {
         background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 480px) {
+        /* Styles for mobile devices */
+        nav {
+            display: none;
+        }
+        hgroup {
+            max-width: 92dvw;
+        }
+
+        #header-bar h1 {
+            --font-size-initial: 11.24vw;
+            --font-size-final: 8.3vw;
+        }
+    }
+    @media (max-width: 320px) {
+        #header-bar h1 {
+            --font-size-final: 1.25rem;
+        }
     }
 </style>

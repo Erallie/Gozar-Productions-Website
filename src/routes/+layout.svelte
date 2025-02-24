@@ -76,17 +76,23 @@
     footer p {
         color: white;
         font-weight: 300;
+        text-align: center;
     }
 
     footer h1 {
         font-size: 1.5rem;
         font-weight: 300;
+        line-height: 1.1em;
     }
     footer svg {
         aspect-ratio: 1 / 1;
         width: auto;
         height: 1em;
         vertical-align: middle;
+    }
+
+    footer p {
+        line-height: 1.2em;
     }
 
     footer p,
