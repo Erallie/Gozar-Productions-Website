@@ -181,12 +181,12 @@
         position: fixed;
         transition:
             height 1s,
-            background-color 1s,
-            text-shadow 1s;
+            background-color 1s /* ,
+            text-shadow 1s */;
         text-transform: uppercase;
         text-align: center;
         color: white;
-        text-shadow: 0 0 3em black;
+        /* text-shadow: 0 0 3em black; */
         width: 100%;
         top: 0;
         /* display: inline-flex;
@@ -200,7 +200,7 @@
 
     #header-bar.scrolled {
         background-color: rgba(255, 255, 255, 0.8);
-        text-shadow: none;
+        /* text-shadow: none; */
     }
 
     hgroup > span:first-child {
@@ -226,14 +226,17 @@
         height: calc(1em * var(--text-multiplier));
         overflow: visible;
         opacity: var(--text-multiplier);
+        text-shadow: 0 0 0.6em black;
         transition:
             margin-top 1s,
             margin-bottom 1s,
-            font-size 1s;
+            font-size 1s,
+            text-shadow 1s;
         margin: 0px;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        will-change: height, opacity, margin-top, margin-bottom, font-size;
+        will-change: height, opacity, margin-top, margin-bottom, font-size,
+            text-shadow;
     }
 
     #header-bar.scrolled h2,
@@ -241,10 +244,12 @@
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 0px;
+        text-shadow: none;
         transition:
             margin-top 1s,
             margin-bottom 1s,
-            font-size 1s;
+            font-size 1s,
+            text-shadow 1s;
     }
 
     #header-bar h1 {
@@ -266,17 +271,20 @@
         margin: 0px;
         margin-top: 1rem;
         margin-bottom: 0.5rem;
+        text-shadow: 0 0 3rem black;
         transition:
             margin-top 1s,
             margin-bottom 1s,
-            color 1s;
-        will-change: font-size, margin-top, margin-bottom, color;
+            color 1s,
+            text-shadow 1s;
+        will-change: font-size, margin-top, margin-bottom, color, text-shadow;
     }
 
     #header-bar.scrolled h1 {
         color: black;
         margin-top: 0px;
         margin-bottom: 0px;
+        text-shadow: none;
     }
 
     #header-bar img {

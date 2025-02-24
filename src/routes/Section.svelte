@@ -89,7 +89,7 @@
 
     section.image,
     section.video {
-        text-shadow: 0 0 2em rgb(var(--shadow-color));
+        text-shadow: 0 0 1em rgb(var(--shadow-color));
     }
 
     section.video {

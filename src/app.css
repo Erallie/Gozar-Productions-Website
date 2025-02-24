@@ -61,28 +61,33 @@ section h2 {
 
 
 section.video button,
-section.image button{
+section.image button {
     text-shadow:
-        0 0 2em rgb(var(--shadow-color));
+        0 0 0.6em rgb(var(--shadow-color));
 }
 
-    button > svg {
-        width: auto;
-        /* aspect-ratio: 200 / 60; */
-        height: 1.5em;
-        vertical-align: middle; /* This can be removed with flexbox */
-        transform: translate(0, -1px);
-        padding-left: 0.8em;
-        transition: height 0.3s;
-    }
+section.video button > svg,
+section.image button > svg {
+    filter: drop-shadow(0 0 0.4em rgb(var(--shadow-color)));
+}
 
-    button:hover {
-        background-color: rgba(var(--text-color), 0.15);
-    }
+button > svg {
+    width: auto;
+    /* aspect-ratio: 200 / 60; */
+    height: 1.5em;
+    vertical-align: middle; /* This can be removed with flexbox */
+    transform: translate(0, -1px);
+    padding-left: 0.8em;
+    transition: height 0.3s;
+}
 
-    button:hover > svg {
-        height: 1.8em;
-    }
+button:hover {
+    background-color: rgba(var(--text-color), 0.15);
+}
+
+button:hover > svg {
+    height: 1.8em;
+}
 
 
 /* section.video button > svg,
