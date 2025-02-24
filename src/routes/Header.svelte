@@ -57,7 +57,7 @@
 </script>
 
 <header>
-    <div class="bar {scrolled ? 'scrolled' : ''}">
+    <div id="header-bar" class={scrolled ? "scrolled" : ""}>
         <div>
             <img src={logo} alt="Gozar Productions Logo" />
             <hgroup
@@ -134,7 +134,7 @@
     header {
         z-index: 50;
     }
-    div.bar {
+    #header-bar {
         position: fixed;
         transition:
             height 1s,
@@ -149,13 +149,13 @@
         /* display: inline-flex;
         align-items: center; */
     }
-    div.bar > div {
+    #header-bar > div {
         display: inline-flex;
         align-items: center;
         flex-grow: 1;
     }
 
-    div.bar.scrolled {
+    #header-bar.scrolled {
         background-color: rgba(255, 255, 255, 0.8);
         text-shadow: none;
     }
@@ -178,8 +178,8 @@
         justify-content: center;
     }
 
-    div.bar span:first-child,
-    div.bar h2 {
+    #header-bar span:first-child,
+    #header-bar h2 {
         height: calc(1em * var(--text-multiplier));
         overflow: visible;
         opacity: var(--text-multiplier);
@@ -193,8 +193,8 @@
         will-change: height, opacity, margin-top, margin-bottom, font-size;
     }
 
-    div.bar.scrolled h2,
-    div.bar.scrolled span:first-child {
+    #header-bar.scrolled h2,
+    #header-bar.scrolled span:first-child {
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 0px;
@@ -204,7 +204,7 @@
             font-size 1s;
     }
 
-    div.bar h1 {
+    #header-bar h1 {
         --font-size-initial: 8.5vw;
         --font-size-final: 2rem;
         font-size: calc(
@@ -230,13 +230,13 @@
         will-change: font-size, margin-top, margin-bottom, color;
     }
 
-    div.bar.scrolled h1 {
+    #header-bar.scrolled h1 {
         color: black;
         margin-top: 0px;
         margin-bottom: 0px;
     }
 
-    div.bar img {
+    #header-bar img {
         aspect-ratio: 1/1;
         vertical-align: middle;
         margin: 1em auto;
@@ -249,7 +249,7 @@
             margin-right 1s;
         will-change: opacity, width, margin-right;
     }
-    div.bar:not(.scrolled) img {
+    #header-bar:not(.scrolled) img {
         width: 0px;
         margin-right: 0px;
         opacity: 0;
