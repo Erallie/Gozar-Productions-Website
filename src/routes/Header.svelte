@@ -124,46 +124,46 @@
                     <a href="/">Home</a>
                 </li>
                 <li
-                    aria-current={page.url.pathname === "#about"
+                    aria-current={page.url.pathname === "/#about"
                         ? "page"
                         : undefined}
                 >
-                    <a href="#about">About</a>
+                    <a href="/#about">About</a>
                 </li>
                 <li
-                    aria-current={page.url.pathname.startsWith("#watch")
+                    aria-current={page.url.pathname.startsWith("/#watch")
                         ? "page"
                         : undefined}
                 >
-                    <a href="#watch">Watch</a>
+                    <a href="/#watch">Watch</a>
                 </li>
                 <li
-                    aria-current={page.url.pathname.startsWith("#music")
+                    aria-current={page.url.pathname.startsWith("/#music")
                         ? "page"
                         : undefined}
                 >
-                    <a href="#music">Our Music</a>
+                    <a href="/#music">Our Music</a>
                 </li>
                 <li
-                    aria-current={page.url.pathname.startsWith("#code")
+                    aria-current={page.url.pathname.startsWith("/#code")
                         ? "page"
                         : undefined}
                 >
-                    <a href="#code">Our Code</a>
+                    <a href="/#code">Our Code</a>
                 </li>
                 <li
-                    aria-current={page.url.pathname.startsWith("#contact")
+                    aria-current={page.url.pathname.startsWith("/#contact")
                         ? "page"
                         : undefined}
                 >
-                    <a href="#contact">Contact</a>
+                    <a href="/#contact">Contact</a>
                 </li>
                 <li
-                    aria-current={page.url.pathname.startsWith("#donate")
+                    aria-current={page.url.pathname.startsWith("/#donate")
                         ? "page"
                         : undefined}
                 >
-                    <a href="#donate">Donate</a>
+                    <a href="/#donate">Donate</a>
                 </li>
             </ul>
         </nav>
