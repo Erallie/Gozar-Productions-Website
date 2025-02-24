@@ -90,49 +90,63 @@
     <h2>Contact us</h2>
     <p>We're always here to answer your questions!</p>
 
-    <Button
-        link="https://discord.gg/cCCEk7BX4W"
-        customSVG
-        marginBottomMultiplier={0.5}
-        >Join our Discord<svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="127.14px"
-            height="96.36px"
-            viewBox="0 8 127.14 80.36"
-        >
-            <path
-                d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
-            />
-        </svg></Button
-    >
-    <Button
-        link="mailto:contact@gozarproductions.com"
-        customSVG
-        marginTopMultiplier={0.5}
-        >Send an email
-        <svg
-            width="20px"
-            height="14px"
-            viewBox="2 5 20 14"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-        >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-            <g
-                id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            ></g>
-            <g id="SVGRepo_iconCarrier">
-                <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M2.272 6.365C2 6.9 2 7.6 2 9v6c0 1.4 0 2.1.272 2.635a2.5 2.5 0 0 0 1.093 1.092C3.9 19 4.6 19 6 19h12c1.4 0 2.1 0 2.635-.273a2.5 2.5 0 0 0 1.092-1.092C22 17.1 22 16.4 22 15V9c0-1.4 0-2.1-.273-2.635a2.5 2.5 0 0 0-1.092-1.093C20.1 5 19.4 5 18 5H6c-1.4 0-2.1 0-2.635.272a2.5 2.5 0 0 0-1.093 1.093zM4.647 7h14.706a.5.5 0 0 1 .278.916l-7.075 4.732a1 1 0 0 1-1.112 0L4.369 7.916A.5.5 0 0 1 4.647 7z"
-                    fill="currentColor"
-                ></path>
-            </g>
-        </svg></Button
-    >
+    <div class="columns">
+        <div>
+            <h3>Gozar Productions</h3>
+            <hr />
+            <a href="mailto:contact@gozarproductions.com"
+                >contact@gozarproductions.com</a
+            >
+        </div>
+        <span class="or">- or -</span>
+        <div>
+            <Button
+                link="https://discord.gg/cCCEk7BX4W"
+                customSVG
+                marginTopMultiplier={0}
+                marginBottomMultiplier={0.5}
+                >Join our Discord<svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="127.14px"
+                    height="72.36px"
+                    viewBox="0 8 127.14 80.36"
+                >
+                    <path
+                        d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
+                    />
+                </svg></Button
+            ><br />
+            <Button
+                link="mailto:contact@gozarproductions.com"
+                customSVG
+                marginTopMultiplier={0.5}
+                marginBottomMultiplier={0}
+                >Send an email
+                <svg
+                    width="20px"
+                    height="14px"
+                    viewBox="2 5 20 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g
+                        id="SVGRepo_tracerCarrier"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    ></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M2.272 6.365C2 6.9 2 7.6 2 9v6c0 1.4 0 2.1.272 2.635a2.5 2.5 0 0 0 1.093 1.092C3.9 19 4.6 19 6 19h12c1.4 0 2.1 0 2.635-.273a2.5 2.5 0 0 0 1.092-1.092C22 17.1 22 16.4 22 15V9c0-1.4 0-2.1-.273-2.635a2.5 2.5 0 0 0-1.092-1.093C20.1 5 19.4 5 18 5H6c-1.4 0-2.1 0-2.635.272a2.5 2.5 0 0 0-1.093 1.093zM4.647 7h14.706a.5.5 0 0 1 .278.916l-7.075 4.732a1 1 0 0 1-1.112 0L4.369 7.916A.5.5 0 0 1 4.647 7z"
+                            fill="currentColor"
+                        ></path>
+                    </g>
+                </svg></Button
+            >
+        </div>
+    </div>
 </Section>
 
 <Section
@@ -152,3 +166,41 @@
         >Donate</Button
     >
 </Section>
+
+<style>
+    div.columns {
+        display: flex;
+        /* width: var(--width); */
+        flex-wrap: wrap;
+    }
+    div.columns > :not(.or) {
+        flex-grow: 1;
+    }
+    div.columns > :first-child {
+        margin: auto 20px;
+    }
+    /* div.columns > :first-child a {
+        overflow-wrap: anywhere;
+    } */
+    div.columns > :last-child {
+        margin: auto 0px;
+    }
+    div.columns > .or {
+        white-space: nowrap;
+        text-transform: uppercase;
+        flex-grow: 0;
+        flex-shrink: 0;
+        margin: 20px auto;
+    }
+    div.columns h3 {
+        /* text-transform: uppercase; */
+        margin-top: 0px;
+        margin-bottom: 0.5em;
+        font-weight: 700;
+    }
+
+    hr {
+        border-top: 1px solid black;
+        width: 50%;
+    }
+</style>

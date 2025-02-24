@@ -1,11 +1,9 @@
 <script lang="ts">
-    import logo from "$lib/images/button-arrow.svg";
     import {
         type SectionProps,
         SectionType,
         TextColor,
     } from "$lib/types/types";
-    import { text } from "@sveltejs/kit";
     let { id, type, backgroundSource, textColor, children }: SectionProps =
         $props();
 
@@ -58,8 +56,14 @@
         width: 100%;
         padding: 5rem 0px;
     }
-    section > div {
+    section#contact > div {
+        max-width: min(90%, 50rem);
+    }
+    section:not(#contact) > div {
         max-width: min(90%, 25rem);
+    }
+
+    section > div {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
