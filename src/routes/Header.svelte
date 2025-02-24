@@ -3,6 +3,7 @@
     import logo from "$lib/images/gozar-productions-logo.svg";
     import { type HeaderProps } from "$lib/types/types";
     import { onMount } from "svelte";
+    import { barInitialHeight, barFinalHeight } from "./stores";
 
     let { title, subtitle, pretitle, children }: HeaderProps = $props();
 
@@ -11,6 +12,7 @@
     let scrolled = $state(false); // Flag to determine if the header is sticky
     let currentPadding = $state(initialPadding); // Current height of the header
     let textMultiplier = $state(1); // Multiplier for text size
+    let isHome = $state(true);
 
     let ticking = false; // Flag to indicate if a scroll event is being processed
 
@@ -31,6 +33,13 @@
             textMultiplier =
                 (currentPadding - finalPadding) /
                 (initialPadding - finalPadding);
+
+            if (currentPadding == finalPadding) {
+                setTimeout(() => {
+                    const headerBar = document.getElementById("header-bar");
+                    barFinalHeight.set(headerBar!.offsetHeight);
+                }, 100);
+            }
         }
 
         // Reset the ticking flag
@@ -46,13 +55,34 @@
     };
 
     onMount(() => {
-        window.addEventListener("scroll", handleScroll);
-        updateScroll();
+        if ($barInitialHeight == 0) {
+            const headerBar = document.getElementById("header-bar");
+            barInitialHeight.set(headerBar!.offsetHeight);
+        }
+    });
 
-        // Cleanup the event listener on component destroy
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
+    $effect(() => {
+        const relativeUrl = page.url.pathname;
+
+        if (relativeUrl === "/" || relativeUrl === "") {
+            isHome = true;
+            window.addEventListener("scroll", handleScroll);
+            updateScroll();
+
+            // Cleanup the event listener on component destroy
+            return () => {
+                window.removeEventListener("scroll", handleScroll);
+            };
+        } else {
+            scrolled = true;
+            currentPadding = finalPadding;
+            textMultiplier = 0;
+            isHome = false;
+            setTimeout(() => {
+                const headerBar = document.getElementById("header-bar");
+                barFinalHeight.set(headerBar!.offsetHeight);
+            }, 100);
+        }
     });
 </script>
 
@@ -125,12 +155,11 @@
         </nav>
     </div>
 </header>
-<section></section>
+<section
+    style="height: {isHome ? `${$barInitialHeight}px` : `${$barFinalHeight}px`}"
+></section>
 
 <style>
-    section {
-        height: 400px;
-    }
     header {
         z-index: 50;
     }

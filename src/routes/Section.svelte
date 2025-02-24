@@ -9,6 +9,8 @@
     let { id, type, backgroundSource, textColor, children }: SectionProps =
         $props();
 
+    import { barFinalHeight } from "./stores";
+
     // svelte-ignore non_reactive_update
     let color: string;
     // svelte-ignore non_reactive_update
@@ -33,7 +35,10 @@
         ? `--image-src: url(${backgroundSource});`
         : ''}
         --text-color: {color};
-        --shadow-color: {shadowColor};
+        --shadow-color: {shadowColor}; scroll-margin-top: {type !==
+    SectionType.First
+        ? `${$barFinalHeight}px`
+        : '0px'}
     "
 >
     {#if type == SectionType.Video}
@@ -114,9 +119,5 @@
         color: white; /* Change text color for visibility */
         text-align: center; /* Center the text */
         padding: 20px; /* Add some padding */
-    }
-
-    section:not(.first) {
-        scroll-margin-top: 100px;
     }
 </style>
