@@ -16,6 +16,7 @@
 h1, h2 {
     text-transform: uppercase;
     text-align: center;
+	font-weight: 400;
 }
 
 button, a {
@@ -46,10 +47,6 @@ body {
 		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%); */
 }
 
-h1,
-h2 {
-	font-weight: 400;
-}
 p {
     font-weight: 400;
 }
