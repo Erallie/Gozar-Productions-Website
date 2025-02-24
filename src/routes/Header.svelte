@@ -172,7 +172,7 @@
         text-transform: uppercase;
         text-align: center;
         color: white;
-        text-shadow: 0 0 4em black;
+        text-shadow: 0 0 3em black;
         width: 100%;
         top: 0;
         /* display: inline-flex;
@@ -297,6 +297,7 @@
         flex-basis: auto;
         transition: background-color 1s;
         will-change: background-color;
+        text-shadow: none;
     }
 
     nav:not(.scrolled) {
