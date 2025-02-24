@@ -71,9 +71,13 @@
 
         if (relativeUrl === "/" || relativeUrl === "") {
             if (!$initialHeightSet && window.scrollY == 0) {
-                const headerBar = document.getElementById("header-bar");
-                barInitialHeight.set(headerBar!.offsetHeight);
-                initialHeightSet.set(true);
+                setTimeout(() => {
+                    if (scrollY == 0) {
+                        const headerBar = document.getElementById("header-bar");
+                        barInitialHeight.set(headerBar!.offsetHeight);
+                        initialHeightSet.set(true);
+                    }
+                }, 100);
             }
             isHome = true;
             window.addEventListener("scroll", handleScroll);
