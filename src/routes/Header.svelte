@@ -108,7 +108,7 @@
                 style="--header-padding: {currentPadding}px; --current-padding: {currentPadding}; --text-multiplier: {textMultiplier}; --initial-padding: {initialPadding}; --final-padding: {finalPadding}"
             >
                 {#if pretitle}
-                    <span>{pretitle}</span>
+                    <span class="pretitle">{pretitle}</span>
                 {/if}
                 <h1>{title}</h1>
                 <h2>{subtitle}</h2>
@@ -203,7 +203,7 @@
         /* text-shadow: none; */
     }
 
-    hgroup > span:first-child {
+    hgroup > .pretitle {
         position: relative;
         z-index: 10;
     }
@@ -221,7 +221,7 @@
         justify-content: center;
     }
 
-    #header-bar span:first-child,
+    #header-bar .pretitle,
     #header-bar h2 {
         height: calc(1em * var(--text-multiplier));
         overflow: visible;
@@ -240,7 +240,7 @@
     }
 
     #header-bar.scrolled h2,
-    #header-bar.scrolled span:first-child {
+    #header-bar.scrolled .pretitle {
         margin-top: 0px;
         margin-bottom: 0px;
         font-size: 0px;
