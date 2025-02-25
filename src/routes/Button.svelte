@@ -1,5 +1,4 @@
 <script lang="ts">
-    import logo from "$lib/images/button-arrow.svg";
     import { type ButtonProps } from "$lib/types/types";
     let {
         link,
