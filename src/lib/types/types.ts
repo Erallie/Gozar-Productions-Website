@@ -20,6 +20,7 @@ export type SectionProps = {
 
 export type ButtonProps = {
     link: string;
+    newTab: boolean;
     customSVG?: boolean;
     marginTopMultiplier?: number;
     marginBottomMultiplier?: number;

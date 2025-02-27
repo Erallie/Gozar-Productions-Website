@@ -2,6 +2,7 @@
     import { type ButtonProps } from "$lib/types/types";
     let {
         link,
+        newTab,
         customSVG,
         marginTopMultiplier,
         marginBottomMultiplier,
@@ -9,14 +10,14 @@
     }: ButtonProps = $props();
 
     // Function to determine if the link is absolute
-    function isAbsoluteUrl(url: string) {
+    /* function isAbsoluteUrl(url: string) {
         return /^(http|https):\/\//.test(url) || url.startsWith("www");
-    }
+    } */
 </script>
 
 <a
     href={link}
-    target={isAbsoluteUrl(link) ? "_blank" : undefined}
+    target={newTab ? "_blank" : undefined}
     style="text-decoration: none;"
 >
     <button

@@ -51,7 +51,9 @@
         means less money for us. The best way to do that is through YouTube,
         where you can find all the videos we've made throughout the years.
     </p>
-    <Button link="https://youtube.com/GozarProductions">Watch us now</Button>
+    <Button link="https://youtube.com/GozarProductions" newTab={true}
+        >Watch us now</Button
+    >
 </Section>
 
 <Section
@@ -66,7 +68,7 @@
         Erika Gozar. She writes all of our original scores with simply an ear
         for music and no formal training in composition.
     </p>
-    <Button link="https://www.gozarproductions.com/erika-gozar"
+    <Button link="https://www.gozarproductions.com/erika-gozar" newTab={false}
         >Listen now</Button
     >
 </Section>
@@ -83,7 +85,9 @@
         of code-based tools, ranging from Discord bots to VR aids. We aim to
         make our projects free for all to use.
     </p>
-    <Button link="https://github.com/Erallie">View our projects</Button>
+    <Button link="https://github.com/Erallie" newTab={true}
+        >View our projects</Button
+    >
 </Section>
 
 <Section id="contact" type={SectionType.White} textColor={TextColor.Black}>
@@ -102,6 +106,7 @@
         <div>
             <Button
                 link="https://discord.gg/cCCEk7BX4W"
+                newTab={true}
                 customSVG
                 marginTopMultiplier={0}
                 marginBottomMultiplier={0.5}
@@ -118,6 +123,7 @@
             ><br />
             <Button
                 link="mailto:contact@gozarproductions.com"
+                newTab={false}
                 customSVG
                 marginTopMultiplier={0.5}
                 marginBottomMultiplier={0}
@@ -162,8 +168,9 @@
         pitch in even just a dollar or two, it could help us reach great
         heights.
     </p>
-    <Button link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
-        >Donate</Button
+    <Button
+        link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
+        newTab={true}>Donate</Button
     >
 </Section>
 
