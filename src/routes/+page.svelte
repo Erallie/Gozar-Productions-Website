@@ -113,7 +113,7 @@
                 >Join our Discord<svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="127.14px"
-                    height="96.36px"
+                    height="80.36px"
                     viewBox="0 8 127.14 80.36"
                 >
                     <path
