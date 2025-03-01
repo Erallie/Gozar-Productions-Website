@@ -20,6 +20,8 @@
 
     let ticking = false; // Flag to indicate if a scroll event is being processed
 
+    let headerBar: HTMLHeadingElement;
+
     // Function to handle scroll updates
     const updateScroll = () => {
         const scrollY = window.scrollY;
@@ -40,13 +42,11 @@
 
             if (currentPadding == finalPadding) {
                 setTimeout(() => {
-                    const headerBar = document.getElementById("header-bar");
                     barFinalHeight.set(headerBar!.offsetHeight);
                 }, 100);
             } else if (!$initialHeightSet && scrollY == 0) {
                 setTimeout(() => {
                     if (scrollY == 0) {
-                        const headerBar = document.getElementById("header-bar");
                         barInitialHeight.set(headerBar!.offsetHeight);
                         initialHeightSet.set(true);
                     }
@@ -73,7 +73,6 @@
             if (!$initialHeightSet && window.scrollY == 0) {
                 setTimeout(() => {
                     if (scrollY == 0) {
-                        const headerBar = document.getElementById("header-bar");
                         barInitialHeight.set(headerBar!.offsetHeight);
                         initialHeightSet.set(true);
                     }
@@ -93,7 +92,6 @@
             textMultiplier = 0;
             isHome = false;
             setTimeout(() => {
-                const headerBar = document.getElementById("header-bar");
                 barFinalHeight.set(headerBar!.offsetHeight);
             }, 100);
         }
@@ -101,7 +99,11 @@
 </script>
 
 <header>
-    <div id="header-bar" class={scrolled ? "scrolled" : ""}>
+    <div
+        id="header-bar"
+        bind:this={headerBar}
+        class={scrolled ? "scrolled" : ""}
+    >
         <div>
             <img src={logo} alt="Gozar Productions Logo" />
             <hgroup
@@ -383,6 +385,7 @@
         letter-spacing: 0.1em;
         text-decoration: none;
         transition: background-color 0.2s linear;
+        font-weight: initial;
     }
 
     a:hover {
