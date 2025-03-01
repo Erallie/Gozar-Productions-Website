@@ -90,6 +90,14 @@ button:hover > svg {
 }
 
 
+a {
+    color: rgb(106, 91, 213);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
 /* section.video button > svg,
 section.image button >svg {
     text-shadow:

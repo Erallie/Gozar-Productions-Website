@@ -319,12 +319,7 @@
 <style>
     a {
         color: rgb(151, 151, 255);
-        text-decoration: none;
     }
-    a:hover {
-        text-decoration: underline;
-    }
-
     li {
         margin: 8px 0;
     }
