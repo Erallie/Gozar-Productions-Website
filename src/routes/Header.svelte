@@ -326,7 +326,7 @@
     }
 
     nav:not(.scrolled) {
-        background-color: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.85);
         will-change: background-color;
     }
 
