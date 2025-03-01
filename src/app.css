@@ -92,6 +92,7 @@ button:hover > svg {
 
 a {
     color: rgb(106, 91, 213);
+    font-weight: 700;
     text-decoration: none;
 }
 a:hover {
