@@ -2,22 +2,17 @@
 	import Button from "./Button.svelte";
 	import Section from "./Section.svelte";
 	import { SectionType, TextColor } from "$lib/types/types";
+
+	const title = "Gozar Productions";
+	const description =
+		"Gozar Productions is a small film company on YouTube creating short films and music videos with a passion for music. Birthed from a young girl's aspirations and pet projects, this small company endeavors to share our passions with the world for all to enjoy.";
 </script>
 
 <svelte:head>
-	<title>Gozar Productions</title>
-	<meta
-		name="description"
-		content="Gozar Productions is a small film company on YouTube creating short films and music videos with a passion for music. Birthed from a young girl's aspirations and pet projects, this small company endeavors to share our passions with the world for all to enjoy."
-	/>
-	<meta
-		property="og:title"
-		content="Gozar Productions: A Musical Film Company"
-	/>
-	<meta
-		property="og:description"
-		content="Gozar Productions is a small film company on YouTube creating short films and music videos with a passion for music. Birthed from a young girl's aspirations and pet projects, this small company endeavors to share our passions with the world for all to enjoy."
-	/>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta property="og:title" content="{title}: A Musical Film Company" />
+	<meta property="og:description" content={description} />
 	<meta
 		property="og:image"
 		content="https://static.wixstatic.com/media/3d52c1_ea36ec3c8e3b48948b1a1d72011d99b4%7Emv2.jpeg/v1/fit/w_2500,h_1330,al_c/3d52c1_ea36ec3c8e3b48948b1a1d72011d99b4%7Emv2.jpeg"
@@ -25,7 +20,7 @@
 	<meta property="og:image:width" content="2500" />
 	<meta property="og:image:height" content="1330" />
 	<meta property="og:url" content="https://www.gozarproductions.com" />
-	<meta property="og:site_name" content="Gozar Productions" />
+	<meta property="og:site_name" content={title} />
 	<meta property="og:type" content="website" />
 </svelte:head>
 
