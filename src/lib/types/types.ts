@@ -1,40 +1,40 @@
 export enum SectionType {
-    First = "first",
-    White = "white",
-    Video = "video",
-    Image = "image"
+	First = "first",
+	White = "white",
+	Video = "video",
+	Image = "image",
 }
 
 export enum TextColor {
-    White,
-    Black
+	White,
+	Black,
 }
 
 export type SectionProps = {
-    id?: string;
-    type: SectionType;
-    textColor: TextColor;
-    backgroundSource?: string;
-    children: any;
-}
+	id?: string;
+	type: SectionType;
+	textColor: TextColor;
+	backgroundSource?: string;
+	children: any;
+};
 
 export type ButtonProps = {
-    link: string;
-    newTab: boolean;
-    customSVG?: boolean;
-    marginTopMultiplier?: number;
-    marginBottomMultiplier?: number;
-    children: any;
-}
+	link: string;
+	newTab: boolean;
+	customSVG?: boolean;
+	marginTopMultiplier?: number;
+	marginBottomMultiplier?: number;
+	children: any;
+};
 
 export type HeaderProps = {
-    title: string;
-    subtitle: string;
-    pretitle?: string;
-    children?: any;
-}
+	title: string;
+	subtitle: string;
+	pretitle?: string;
+	children?: any;
+};
 
 export type LegalSectionProps = {
-    id?: string;
-    children?: any;
-}
+	id?: string;
+	children?: any;
+};

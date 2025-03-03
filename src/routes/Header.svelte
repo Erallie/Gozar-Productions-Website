@@ -1,414 +1,414 @@
 <script lang="ts">
-    import { page } from "$app/state";
-    import logo from "$lib/images/gozar-productions-logo.svg";
-    import { type HeaderProps } from "$lib/types/types";
-    import { onMount } from "svelte";
-    import {
-        barInitialHeight,
-        barFinalHeight,
-        initialHeightSet,
-    } from "./stores";
+	import { page } from "$app/state";
+	import logo from "$lib/images/gozar-productions-logo.svg";
+	import { type HeaderProps } from "$lib/types/types";
+	import { onMount } from "svelte";
+	import {
+		barInitialHeight,
+		barFinalHeight,
+		initialHeightSet,
+	} from "./stores";
 
-    let { title, subtitle, pretitle, children }: HeaderProps = $props();
+	let { title, subtitle, pretitle, children }: HeaderProps = $props();
 
-    const initialPadding = 100; // Initial height of the header
-    const finalPadding = 0;
-    let scrolled = $state(false); // Flag to determine if the header is sticky
-    let currentPadding = $state(initialPadding); // Current height of the header
-    let textMultiplier = $state(1); // Multiplier for text size
-    let isHome = $state(true);
+	const initialPadding = 100; // Initial height of the header
+	const finalPadding = 0;
+	let scrolled = $state(false); // Flag to determine if the header is sticky
+	let currentPadding = $state(initialPadding); // Current height of the header
+	let textMultiplier = $state(1); // Multiplier for text size
+	let isHome = $state(true);
 
-    let ticking = false; // Flag to indicate if a scroll event is being processed
+	let ticking = false; // Flag to indicate if a scroll event is being processed
 
-    let headerBar: HTMLHeadingElement;
+	let headerBar: HTMLHeadingElement;
 
-    // Function to handle scroll updates
-    const updateScroll = () => {
-        const scrollY = window.scrollY;
+	// Function to handle scroll updates
+	const updateScroll = () => {
+		const scrollY = window.scrollY;
 
-        // Calculate new padding based on scroll position
-        const newPadding = Math.max(
-            finalPadding,
-            initialPadding - scrollY / 3.25,
-        );
+		// Calculate new padding based on scroll position
+		const newPadding = Math.max(
+			finalPadding,
+			initialPadding - scrollY / 3.25
+		);
 
-        // Only update if the value has changed
-        if (newPadding !== currentPadding) {
-            currentPadding = newPadding; // Update only if changed
-            scrolled = currentPadding <= finalPadding; // Update scrolled flag
-            textMultiplier =
-                (currentPadding - finalPadding) /
-                (initialPadding - finalPadding);
+		// Only update if the value has changed
+		if (newPadding !== currentPadding) {
+			currentPadding = newPadding; // Update only if changed
+			scrolled = currentPadding <= finalPadding; // Update scrolled flag
+			textMultiplier =
+				(currentPadding - finalPadding) /
+				(initialPadding - finalPadding);
 
-            if (currentPadding == finalPadding) {
-                setTimeout(() => {
-                    barFinalHeight.set(headerBar!.offsetHeight);
-                }, 100);
-            } else if (!$initialHeightSet && scrollY == 0) {
-                setTimeout(() => {
-                    if (scrollY == 0) {
-                        barInitialHeight.set(headerBar!.offsetHeight);
-                        initialHeightSet.set(true);
-                    }
-                }, 100);
-            }
-        }
+			if (currentPadding == finalPadding) {
+				setTimeout(() => {
+					barFinalHeight.set(headerBar!.offsetHeight);
+				}, 100);
+			} else if (!$initialHeightSet && scrollY == 0) {
+				setTimeout(() => {
+					if (scrollY == 0) {
+						barInitialHeight.set(headerBar!.offsetHeight);
+						initialHeightSet.set(true);
+					}
+				}, 100);
+			}
+		}
 
-        // Reset the ticking flag
-        ticking = false;
-    };
+		// Reset the ticking flag
+		ticking = false;
+	};
 
-    // Scroll event handler
-    const handleScroll = () => {
-        if (!ticking) {
-            ticking = true; // Set the ticking flag to true
-            window.requestAnimationFrame(updateScroll);
-        }
-    };
+	// Scroll event handler
+	const handleScroll = () => {
+		if (!ticking) {
+			ticking = true; // Set the ticking flag to true
+			window.requestAnimationFrame(updateScroll);
+		}
+	};
 
-    $effect(() => {
-        const relativeUrl = page.url.pathname;
+	$effect(() => {
+		const relativeUrl = page.url.pathname;
 
-        if (relativeUrl === "/" || relativeUrl === "") {
-            if (!$initialHeightSet && window.scrollY == 0) {
-                setTimeout(() => {
-                    if (scrollY == 0) {
-                        barInitialHeight.set(headerBar!.offsetHeight);
-                        initialHeightSet.set(true);
-                    }
-                }, 100);
-            }
-            isHome = true;
-            window.addEventListener("scroll", handleScroll);
-            updateScroll();
+		if (relativeUrl === "/" || relativeUrl === "") {
+			if (!$initialHeightSet && window.scrollY == 0) {
+				setTimeout(() => {
+					if (scrollY == 0) {
+						barInitialHeight.set(headerBar!.offsetHeight);
+						initialHeightSet.set(true);
+					}
+				}, 100);
+			}
+			isHome = true;
+			window.addEventListener("scroll", handleScroll);
+			updateScroll();
 
-            // Cleanup the event listener on component destroy
-            return () => {
-                window.removeEventListener("scroll", handleScroll);
-            };
-        } else {
-            scrolled = true;
-            currentPadding = finalPadding;
-            textMultiplier = 0;
-            isHome = false;
-            setTimeout(() => {
-                barFinalHeight.set(headerBar!.offsetHeight);
-            }, 100);
-        }
-    });
+			// Cleanup the event listener on component destroy
+			return () => {
+				window.removeEventListener("scroll", handleScroll);
+			};
+		} else {
+			scrolled = true;
+			currentPadding = finalPadding;
+			textMultiplier = 0;
+			isHome = false;
+			setTimeout(() => {
+				barFinalHeight.set(headerBar!.offsetHeight);
+			}, 100);
+		}
+	});
 </script>
 
 <header>
-    <div
-        id="header-bar"
-        bind:this={headerBar}
-        class={scrolled ? "scrolled" : ""}
-    >
-        <div>
-            <img src={logo} alt="Gozar Productions Logo" />
-            <hgroup
-                style="--header-padding: {currentPadding}px; --current-padding: {currentPadding}; --text-multiplier: {textMultiplier}; --initial-padding: {initialPadding}; --final-padding: {finalPadding}"
-            >
-                {#if pretitle}
-                    <span class="pretitle">{pretitle}</span>
-                {/if}
-                <h1>{title}</h1>
-                <h2>{subtitle}</h2>
-            </hgroup>
-        </div>
-        <nav class={scrolled ? "scrolled" : ""}>
-            <ul>
-                <li
-                    aria-current={page.url.pathname === "/"
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/">Home</a>
-                </li>
-                <li
-                    aria-current={page.url.pathname === "/#about"
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/#about">About</a>
-                </li>
-                <li
-                    aria-current={page.url.pathname.startsWith("/#watch")
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/#watch">Watch</a>
-                </li>
-                <li
-                    aria-current={page.url.pathname.startsWith("/#music")
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/#music">Our Music</a>
-                </li>
-                <li
-                    aria-current={page.url.pathname.startsWith("/#code")
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/#code">Our Code</a>
-                </li>
-                <li
-                    aria-current={page.url.pathname.startsWith("/#contact")
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/#contact">Contact</a>
-                </li>
-                <li
-                    aria-current={page.url.pathname.startsWith("/#donate")
-                        ? "page"
-                        : undefined}
-                >
-                    <a href="/#donate">Donate</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+	<div
+		id="header-bar"
+		bind:this={headerBar}
+		class={scrolled ? "scrolled" : ""}
+	>
+		<div>
+			<img src={logo} alt="Gozar Productions Logo" />
+			<hgroup
+				style="--header-padding: {currentPadding}px; --current-padding: {currentPadding}; --text-multiplier: {textMultiplier}; --initial-padding: {initialPadding}; --final-padding: {finalPadding}"
+			>
+				{#if pretitle}
+					<span class="pretitle">{pretitle}</span>
+				{/if}
+				<h1>{title}</h1>
+				<h2>{subtitle}</h2>
+			</hgroup>
+		</div>
+		<nav class={scrolled ? "scrolled" : ""}>
+			<ul>
+				<li
+					aria-current={page.url.pathname === "/"
+						? "page"
+						: undefined}
+				>
+					<a href="/">Home</a>
+				</li>
+				<li
+					aria-current={page.url.pathname === "/#about"
+						? "page"
+						: undefined}
+				>
+					<a href="/#about">About</a>
+				</li>
+				<li
+					aria-current={page.url.pathname.startsWith("/#watch")
+						? "page"
+						: undefined}
+				>
+					<a href="/#watch">Watch</a>
+				</li>
+				<li
+					aria-current={page.url.pathname.startsWith("/#music")
+						? "page"
+						: undefined}
+				>
+					<a href="/#music">Our Music</a>
+				</li>
+				<li
+					aria-current={page.url.pathname.startsWith("/#code")
+						? "page"
+						: undefined}
+				>
+					<a href="/#code">Our Code</a>
+				</li>
+				<li
+					aria-current={page.url.pathname.startsWith("/#contact")
+						? "page"
+						: undefined}
+				>
+					<a href="/#contact">Contact</a>
+				</li>
+				<li
+					aria-current={page.url.pathname.startsWith("/#donate")
+						? "page"
+						: undefined}
+				>
+					<a href="/#donate">Donate</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </header>
 <section
-    style="height: {isHome ? `${$barInitialHeight}px` : `${$barFinalHeight}px`}"
+	style="height: {isHome ? `${$barInitialHeight}px` : `${$barFinalHeight}px`}"
 ></section>
 
 <style>
-    header {
-        z-index: 50;
-    }
-    #header-bar {
-        position: fixed;
-        transition:
-            height 1s,
-            background-color 1s /* ,
+	header {
+		z-index: 50;
+	}
+	#header-bar {
+		position: fixed;
+		transition:
+			height 1s,
+			background-color 1s /* ,
             text-shadow 1s */;
-        text-transform: uppercase;
-        text-align: center;
-        color: white;
-        /* text-shadow: 0 0 3em black; */
-        width: 100%;
-        top: 0;
-        /* display: inline-flex;
+		text-transform: uppercase;
+		text-align: center;
+		color: white;
+		/* text-shadow: 0 0 3em black; */
+		width: 100%;
+		top: 0;
+		/* display: inline-flex;
         align-items: center; */
-    }
-    #header-bar > div {
-        display: inline-flex;
-        align-items: center;
-        flex-grow: 1;
-    }
+	}
+	#header-bar > div {
+		display: inline-flex;
+		align-items: center;
+		flex-grow: 1;
+	}
 
-    #header-bar.scrolled {
-        background-color: rgba(255, 255, 255, 0.8);
-        /* text-shadow: none; */
-    }
+	#header-bar.scrolled {
+		background-color: rgba(255, 255, 255, 0.8);
+		/* text-shadow: none; */
+	}
 
-    hgroup > .pretitle {
-        position: relative;
-        z-index: 10;
-    }
-    hgroup {
-        margin-right: 1rem;
-        padding: 0px;
-        padding-top: var(--header-padding);
-        padding-bottom: var(--header-padding);
-        will-change: padding-top, padding-bottom;
-        max-width: 80dvw;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+	hgroup > .pretitle {
+		position: relative;
+		z-index: 10;
+	}
+	hgroup {
+		margin-right: 1rem;
+		padding: 0px;
+		padding-top: var(--header-padding);
+		padding-bottom: var(--header-padding);
+		will-change: padding-top, padding-bottom;
+		max-width: 80dvw;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 
-    #header-bar .pretitle,
-    #header-bar h2 {
-        height: calc(1em * var(--text-multiplier));
-        overflow: visible;
-        opacity: var(--text-multiplier);
-        text-shadow: 0 0 0.6em black;
-        transition:
-            margin-top 1s,
-            margin-bottom 1s,
-            font-size 1s,
-            text-shadow 1s;
-        margin: 0px;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        line-height: 1em;
-        will-change: height, opacity, margin-top, margin-bottom, font-size,
-            text-shadow;
-    }
+	#header-bar .pretitle,
+	#header-bar h2 {
+		height: calc(1em * var(--text-multiplier));
+		overflow: visible;
+		opacity: var(--text-multiplier);
+		text-shadow: 0 0 0.6em black;
+		transition:
+			margin-top 1s,
+			margin-bottom 1s,
+			font-size 1s,
+			text-shadow 1s;
+		margin: 0px;
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		line-height: 1em;
+		will-change:
+			height, opacity, margin-top, margin-bottom, font-size, text-shadow;
+	}
 
-    #header-bar.scrolled h2,
-    #header-bar.scrolled .pretitle {
-        margin-top: 0px;
-        margin-bottom: 0px;
-        font-size: 0px;
-        text-shadow: none;
-        transition:
-            margin-top 1s,
-            margin-bottom 1s,
-            font-size 1s,
-            text-shadow 1s;
-    }
+	#header-bar.scrolled h2,
+	#header-bar.scrolled .pretitle {
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-size: 0px;
+		text-shadow: none;
+		transition:
+			margin-top 1s,
+			margin-bottom 1s,
+			font-size 1s,
+			text-shadow 1s;
+	}
 
-    #header-bar h1 {
-        --font-size-initial: max(8.5vw, 2rem);
-        --font-size-final: min(2rem, 8.5vw);
-        font-size: calc(
-            (
-                    var(--font-size-initial) *
-                        (var(--current-padding) - var(--final-padding)) /
-                        (var(--initial-padding) - var(--final-padding))
-                ) +
-                (
-                    var(--font-size-final) *
-                        (var(--initial-padding) - var(--current-padding)) /
-                        (var(--initial-padding) - var(--final-padding))
-                )
-        );
-        line-height: 1em;
-        margin-left: 0px;
-        margin-right: 0px;
-        margin-top: 1rem;
-        margin-bottom: 0.5rem;
-        text-shadow: 0 0 3rem black;
-        transition:
-            margin-top 1s,
-            margin-bottom 1s,
-            color 1s,
-            text-shadow 1s;
-        will-change: font-size, margin-top, margin-bottom, color, text-shadow;
-    }
+	#header-bar h1 {
+		--font-size-initial: max(8.5vw, 2rem);
+		--font-size-final: min(2rem, 8.5vw);
+		font-size: calc(
+			(
+					var(--font-size-initial) *
+						(var(--current-padding) - var(--final-padding)) /
+						(var(--initial-padding) - var(--final-padding))
+				) +
+				(
+					var(--font-size-final) *
+						(var(--initial-padding) - var(--current-padding)) /
+						(var(--initial-padding) - var(--final-padding))
+				)
+		);
+		line-height: 1em;
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 1rem;
+		margin-bottom: 0.5rem;
+		text-shadow: 0 0 3rem black;
+		transition:
+			margin-top 1s,
+			margin-bottom 1s,
+			color 1s,
+			text-shadow 1s;
+		will-change: font-size, margin-top, margin-bottom, color, text-shadow;
+	}
 
-    #header-bar.scrolled h1 {
-        color: black;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        text-shadow: none;
-    }
+	#header-bar.scrolled h1 {
+		color: black;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		text-shadow: none;
+	}
 
-    #header-bar img {
-        aspect-ratio: 1/1;
-        vertical-align: middle;
-        margin: 1em 1rem;
-        margin-right: 0.8em;
-        opacity: 1;
-        width: 3.5rem;
-        transition:
-            opacity 1s,
-            width 1s,
-            margin-right 1s;
-        will-change: opacity, width, margin-right;
-    }
-    #header-bar:not(.scrolled) img {
-        width: 0px;
-        margin-right: 0px;
-        opacity: 0;
-        transition:
-            opacity 1s,
-            width 1s,
-            margin-right 1s;
-        will-change: opacity, width, margin-right;
-    }
+	#header-bar img {
+		aspect-ratio: 1/1;
+		vertical-align: middle;
+		margin: 1em 1rem;
+		margin-right: 0.8em;
+		opacity: 1;
+		width: 3.5rem;
+		transition:
+			opacity 1s,
+			width 1s,
+			margin-right 1s;
+		will-change: opacity, width, margin-right;
+	}
+	#header-bar:not(.scrolled) img {
+		width: 0px;
+		margin-right: 0px;
+		opacity: 0;
+		transition:
+			opacity 1s,
+			width 1s,
+			margin-right 1s;
+		will-change: opacity, width, margin-right;
+	}
 
-    nav {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        height: 100%;
-        flex-basis: auto;
-        transition: background-color 1s;
-        will-change: background-color;
-        text-shadow: none;
-        word-break: keep-all;
-    }
+	nav {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		height: 100%;
+		flex-basis: auto;
+		transition: background-color 1s;
+		will-change: background-color;
+		text-shadow: none;
+		word-break: keep-all;
+	}
 
-    nav:not(.scrolled) {
-        background-color: rgba(255, 255, 255, 0.85);
-        will-change: background-color;
-    }
+	nav:not(.scrolled) {
+		background-color: rgba(255, 255, 255, 0.85);
+		will-change: background-color;
+	}
 
-    ul {
-        position: relative;
-        padding: 0;
-        margin: 0;
-        height: 3em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        list-style: none;
-        flex-grow: 1;
-    }
+	ul {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		height: 3em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		flex-grow: 1;
+	}
 
-    li {
-        position: relative;
-        height: 100%;
-        border-top-style: solid;
-        border-top-color: rgba(0, 0, 0, 1);
-        border-top-width: 1px;
-        transition: border-top-color 1s;
-        will-change: border-top-color;
-    }
-    nav:not(.scrolled) li {
-        border-top-color: rgba(0, 0, 0, 0);
-        border-top-width: 0px;
-        transition:
-            border-top-color 0.3s,
-            border-top-width 0.3s;
-        will-change: border-top-color, border-top-width;
-    }
+	li {
+		position: relative;
+		height: 100%;
+		border-top-style: solid;
+		border-top-color: rgba(0, 0, 0, 1);
+		border-top-width: 1px;
+		transition: border-top-color 1s;
+		will-change: border-top-color;
+	}
+	nav:not(.scrolled) li {
+		border-top-color: rgba(0, 0, 0, 0);
+		border-top-width: 0px;
+		transition:
+			border-top-color 0.3s,
+			border-top-width 0.3s;
+		will-change: border-top-color, border-top-width;
+	}
 
-    li[aria-current="page"]::before {
-        --size: 6px;
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        top: 0;
-        left: calc(50% - var(--size));
-        border: var(--size) solid transparent;
-        border-top: var(--size) solid var(--color-theme-1);
-    }
+	li[aria-current="page"]::before {
+		--size: 6px;
+		content: "";
+		width: 0;
+		height: 0;
+		position: absolute;
+		top: 0;
+		left: calc(50% - var(--size));
+		border: var(--size) solid transparent;
+		border-top: var(--size) solid var(--color-theme-1);
+	}
 
-    nav a {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        padding: 0 0.5rem;
-        color: black;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        text-decoration: none;
-        transition: background-color 0.2s linear;
-        font-weight: initial;
-    }
+	nav a {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 0 0.5rem;
+		color: black;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: background-color 0.2s linear;
+		font-weight: initial;
+	}
 
-    a:hover {
-        background-color: rgba(0, 0, 0, 0.2);
-    }
+	a:hover {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
 
-    @media (max-width: 480px) {
-        /* Styles for mobile devices */
-        nav {
-            display: none;
-        }
-        hgroup {
-            max-width: 92dvw;
-        }
+	@media (max-width: 480px) {
+		/* Styles for mobile devices */
+		nav {
+			display: none;
+		}
+		hgroup {
+			max-width: 92dvw;
+		}
 
-        #header-bar h1 {
-            --font-size-initial: 11.24vw;
-            --font-size-final: 8.3vw;
-        }
-    }
-    @media (max-width: 320px) {
-        #header-bar h1 {
-            --font-size-final: 1.25rem;
-        }
-    }
+		#header-bar h1 {
+			--font-size-initial: 11.24vw;
+			--font-size-final: 8.3vw;
+		}
+	}
+	@media (max-width: 320px) {
+		#header-bar h1 {
+			--font-size-final: 1.25rem;
+		}
+	}
 </style>
