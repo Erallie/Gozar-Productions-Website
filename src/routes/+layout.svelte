@@ -10,7 +10,7 @@
 <div class="app">
     <Header
         title="Gozar Productions"
-        subtitle="Where passion takes flight"
+        subtitle="Where creativity takes flight"
         pretitle="Welcome to"
     />
 
