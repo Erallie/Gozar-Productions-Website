@@ -12,7 +12,7 @@
 </script>
 
 <h1>{title}</h1>
-<div class="content">
+<div>
 	{@render children()}
 </div>
 
@@ -24,7 +24,7 @@
 		text-shadow: 0 0 0.6em black;
 	}
 
-	div.content {
+	div {
 		max-width: 90%;
 		width: 900px;
 		margin: 0 auto;
