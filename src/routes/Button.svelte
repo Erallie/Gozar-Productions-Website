@@ -67,23 +67,21 @@
 		margin: calc(20px * var(--margin-top-multiplier)) 20px
 			calc(20px * var(--margin-bottom-multiplier));
 		transition: background-color 0.3s;
-	}
 
-	button > svg {
-		width: auto;
-		/* aspect-ratio: 200 / 60; */
-		height: 0.8em;
-		vertical-align: middle; /* This can be removed with flexbox */
-		transform: translate(0, -1px);
-		padding-left: 0.5em;
-		transition: height 0.3s;
-	}
-
-	button:hover {
-		background-color: rgba(var(--text-color), 0.15);
-	}
-
-	button:hover > svg {
-		height: 1em;
+		& > svg {
+			width: auto;
+			/* aspect-ratio: 200 / 60; */
+			height: 0.8em;
+			vertical-align: middle; /* This can be removed with flexbox */
+			transform: translate(0, -1px);
+			padding-left: 0.5em;
+			transition: height 0.3s;
+		}
+		&:hover {
+			background-color: rgba(var(--text-color), 0.15);
+			& > svg {
+				height: 1em;
+			}
+		}
 	}
 </style>

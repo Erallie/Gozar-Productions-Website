@@ -173,30 +173,28 @@
 	div.columns {
 		display: flex;
 		flex-wrap: wrap;
-	}
-	div.columns > :not(.or) {
-		flex-grow: 1;
-	}
-	div.columns > :first-child {
-		margin: auto 20px;
-	}
-	div.columns > :last-child {
-		margin: auto 0px;
-	}
-	div.columns > .or {
-		white-space: nowrap;
-		text-transform: uppercase;
-		flex-grow: 0;
-		flex-shrink: 0;
-		margin: auto;
-	}
-	div.columns > * {
-		padding: 20px 0px;
-	}
-	div.columns h3 {
-		margin-top: 0px;
-		margin-bottom: 0.5em;
-		font-weight: 700;
+		& > * {
+			padding: 20px 0px;
+			flex-grow: 1;
+		}
+		& > :first-child {
+			margin: auto 20px;
+		}
+		& > :last-child {
+			margin: auto 0px;
+		}
+		& > .or {
+			white-space: nowrap;
+			text-transform: uppercase;
+			flex-grow: 0;
+			flex-shrink: 0;
+			margin: auto;
+		}
+		& h3 {
+			margin-top: 0px;
+			margin-bottom: 0.5em;
+			font-weight: 700;
+		}
 	}
 
 	hr {

@@ -66,8 +66,8 @@
 	a {
 		color: rgb(151, 151, 255);
 		text-decoration: none;
-	}
-	a:hover {
-		text-decoration: underline;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 </style>
