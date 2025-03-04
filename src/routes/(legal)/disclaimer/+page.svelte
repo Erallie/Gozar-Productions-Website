@@ -12,8 +12,8 @@
 			href="mailto:contact@gozarproductions.com"
 			>contact@gozarproductions.com</a
 		>.
-	</p></LegalSection
->
+	</p>
+</LegalSection>
 <LegalSection id="disclaimers">
 	<h2>Disclaimers</h2>
 	<p>
@@ -43,16 +43,16 @@
 		Please be sure to check the Privacy Policies of these sites as well as
 		their "Terms of Service" before engaging in any business or uploading
 		any information.
-	</p></LegalSection
->
+	</p>
+</LegalSection>
 
-<LegalSection id="consent"
-	><h2>Consent</h2>
+<LegalSection id="consent">
+	<h2>Consent</h2>
 	<p>
 		By using our website, you hereby consent to our disclaimer and agree to
 		its terms.
-	</p></LegalSection
->
+	</p>
+</LegalSection>
 
 <LegalSection id="update"
 	><h2>Update</h2>
