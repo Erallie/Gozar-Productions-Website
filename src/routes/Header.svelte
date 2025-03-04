@@ -374,11 +374,14 @@
 		}
 	}
 
-	@media (max-width: 480px) {
-		/* Styles for mobile devices */
+	@media (max-width: 590px) {
 		nav {
 			display: none;
 		}
+	}
+
+	@media (max-width: 480px) {
+		/* Styles for mobile devices */
 		hgroup {
 			max-width: 92dvw;
 		}
