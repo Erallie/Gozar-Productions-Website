@@ -177,8 +177,9 @@
 	div.columns {
 		display: flex;
 		flex-wrap: wrap;
+		padding: 10px 0px;
 		& > * {
-			padding: 20px 0px;
+			padding: 10px 0px;
 			flex-grow: 1;
 		}
 		& > :first-child {
@@ -204,5 +205,10 @@
 	hr {
 		border-top: 1px solid black;
 		width: 50%;
+	}
+	@media (max-width: 809px) {
+		.or {
+			width: 100%;
+		}
 	}
 </style>
