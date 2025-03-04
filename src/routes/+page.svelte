@@ -63,7 +63,7 @@
 		Erika Gozar. She writes all of our original scores with simply an ear
 		for music and no formal training in composition.
 	</p>
-	<Button link="https://www.gozarproductions.com/erika-gozar" newTab={false}>
+	<Button link="https://music.gozarproductions.com" newTab={false}>
 		Listen now
 	</Button>
 </Section>
