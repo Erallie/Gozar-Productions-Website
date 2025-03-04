@@ -183,16 +183,12 @@
 		position: fixed;
 		transition:
 			height 1s,
-			background-color 1s /* ,
-            text-shadow 1s */;
+			background-color 1s;
 		text-transform: uppercase;
 		text-align: center;
 		color: white;
-		/* text-shadow: 0 0 3em black; */
 		width: 100%;
 		top: 0;
-		/* display: inline-flex;
-        align-items: center; */
 	}
 	#header-bar > div {
 		display: inline-flex;

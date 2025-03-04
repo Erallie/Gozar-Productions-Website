@@ -172,7 +172,6 @@
 <style>
 	div.columns {
 		display: flex;
-		/* width: var(--width); */
 		flex-wrap: wrap;
 	}
 	div.columns > :not(.or) {
@@ -181,9 +180,6 @@
 	div.columns > :first-child {
 		margin: auto 20px;
 	}
-	/* div.columns > :first-child a {
-        overflow-wrap: anywhere;
-    } */
 	div.columns > :last-child {
 		margin: auto 0px;
 	}
@@ -198,7 +194,6 @@
 		padding: 20px 0px;
 	}
 	div.columns h3 {
-		/* text-transform: uppercase; */
 		margin-top: 0px;
 		margin-bottom: 0.5em;
 		font-weight: 700;
