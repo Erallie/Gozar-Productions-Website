@@ -206,9 +206,7 @@
 				margin-bottom 1s,
 				font-size 1s,
 				text-shadow 1s;
-			margin: 0px;
-			margin-top: 1rem;
-			margin-bottom: 1rem;
+			margin: 1rem 0px;
 			line-height: 1em;
 			will-change:
 				height, opacity, margin-top, margin-bottom, font-size,
@@ -230,10 +228,7 @@
 					)
 			);
 			line-height: 1em;
-			margin-left: 0px;
-			margin-right: 0px;
-			margin-top: 1rem;
-			margin-bottom: 0.5rem;
+			margin: 1rem 0px 0.5rem;
 			text-shadow: 0 0 3rem black;
 			transition:
 				margin-top 1s,
@@ -293,9 +288,7 @@
 
 	hgroup {
 		margin-right: 1rem;
-		padding: 0px;
-		padding-top: var(--header-padding);
-		padding-bottom: var(--header-padding);
+		padding: var(--header-padding) 0px;
 		will-change: padding-top, padding-bottom;
 		max-width: 80dvw;
 		height: 100%;
