@@ -87,13 +87,13 @@ a {
 
 @media (max-width: 480px) {
 	/* Styles for mobile devices */
-	:root {
-		/* font-size: 22px; */
-	}
+	/* :root {
+		font-size: 22px;
+	} */
 }
 @media (max-width: 320px) {
 	/* Styles for mobile devices */
-	:root {
-		/* font-size: 20px; */
-	}
+	/* :root {
+		font-size: 20px;
+	} */
 }
