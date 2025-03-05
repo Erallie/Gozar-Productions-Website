@@ -272,7 +272,8 @@
 		}
 
 		&.scrolled {
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: rgba(255, 255, 255, 0.7);
+			backdrop-filter: blur(5px);
 
 			& h2,
 			& .pretitle {
