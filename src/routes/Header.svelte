@@ -388,14 +388,22 @@
 
 		#header-bar h1 {
 			--font-size-initial: 11.24vw;
+			/* --font-size-final: calc(
+				9.2dvw - (1rem + 0.8rem + 3.5rem + 1rem + 1rem + 0.5rem) / 100
+			); */
+			--font-size-final: 8.3vw;
+			/* --font-size-final: calc(
+				9.2dvw - ((1rem + 0.8rem + 3.5rem + 1rem) / 100)
+			); */
+			/* --font-size-final: calc(9.2dvw - (100.8px) / 100); */
+			/* --font-size-final: clamp(1.25rem, 2vw + 1rem, 8.3vw); */
+		}
+	}
+	@media (max-width: 320px) {
+		#header-bar h1 {
 			--font-size-final: calc(
 				9.2dvw - (1rem + 0.8rem + 3.5rem + 1rem + 1rem + 0.5rem) / 100
 			);
 		}
-	}
-	@media (max-width: 320px) {
-		/* #header-bar h1 {
-			--font-size-final: 1.25rem;
-		} */
 	}
 </style>
