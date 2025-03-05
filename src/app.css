@@ -58,7 +58,7 @@ section {
 	}
 }
 
-button {
+button/* :not([aria-label="menu"]) */ {
 	& > svg {
 		width: auto;
 		/* aspect-ratio: 200 / 60; */

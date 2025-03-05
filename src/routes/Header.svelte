@@ -96,6 +96,12 @@
 			}, 100);
 		}
 	});
+
+	/* let menuOpen = $state(false);
+
+	function openMenu() {
+		menuOpen = !menuOpen;
+	} */
 </script>
 
 <header>
@@ -116,7 +122,26 @@
 				<h2>{subtitle}</h2>
 			</hgroup>
 		</div>
+		<hr />
 		<nav class={scrolled ? "scrolled" : ""}>
+			<!-- <button aria-label="menu" onclick={openMenu}>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="100"
+					height="100"
+					viewBox="0 0 100 100"
+				>
+					<g
+						stroke="currentColor"
+						stroke-width="5"
+						stroke-linecap="round"
+					>
+						<line x1="2.5" y1="20" x2="97.5" y2="20" />
+						<line x1="2.5" y1="50" x2="97.5" y2="50" />
+						<line x1="2.5" y1="80" x2="97.5" y2="80" />
+					</g>
+				</svg>
+			</button> -->
 			<ul>
 				<li
 					aria-current={page.url.pathname === "/"
@@ -238,6 +263,13 @@
 			will-change:
 				font-size, margin-top, margin-bottom, color, text-shadow;
 		}
+		& hr {
+			width: 0px;
+			border: none;
+			border-top: 1px solid black;
+			margin: -1px auto;
+			transition: width 1s;
+		}
 
 		&.scrolled {
 			background-color: rgba(255, 255, 255, 0.8);
@@ -259,6 +291,9 @@
 				margin-top: 0px;
 				margin-bottom: 0px;
 				text-shadow: none;
+			}
+			& hr {
+				width: 200px;
 			}
 		}
 		& img {
@@ -317,22 +352,6 @@
 	li {
 		position: relative;
 		height: 100%;
-		border-top-style: solid;
-		border-top-color: rgba(0, 0, 0, 1);
-		border-top-width: 1px;
-		transition: border-top-color 1s;
-		will-change: border-top-color;
-		&::before {
-			--size: 6px;
-			content: "";
-			width: 0;
-			height: 0;
-			position: absolute;
-			top: 0;
-			left: calc(50% - var(--size));
-			border: var(--size) solid transparent;
-			border-top: var(--size) solid var(--color-theme-1);
-		}
 	}
 	nav {
 		position: relative;
@@ -355,7 +374,11 @@
 					border-top-width 0.3s;
 				will-change: border-top-color, border-top-width;
 			}
-		}
+		} /* 
+		& a,
+		& button {
+			transition: background-color 0.2s linear;
+		} */
 		& a {
 			display: flex;
 			height: 100%;
@@ -371,12 +394,40 @@
 			&:hover {
 				background-color: rgba(0, 0, 0, 0.2);
 			}
+		} /* 
+		& button {
+			border: none;
+			background: none;
+			font-family: inherit;
+			padding: 5px;
+			& > svg {
+				vertical-align: middle;
+				height: 1.5em;
+				width: min-content;
+			}
 		}
+		& a:hover,
+		& button:hover {
+				background-color: rgba(0, 0, 0, 0.2);
+		} */
 	}
 
 	@media (max-width: 590px) {
 		nav {
-			display: none;
+			/* display: none; */
+			/* height: max-content; */
+			& ul {
+				/* display: none; */
+				/* flex-direction: column; */
+				flex-wrap: wrap;
+				height: min-content;
+				li {
+					height: 40px;
+				}
+				&.open {
+					display: flex;
+				}
+			}
 		}
 	}
 
