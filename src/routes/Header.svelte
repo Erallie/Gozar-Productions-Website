@@ -425,9 +425,9 @@
 				li {
 					height: 40px;
 				}
-				&.open {
+				/* &.open {
 					display: flex;
-				}
+				} */
 			}
 		}
 	}
