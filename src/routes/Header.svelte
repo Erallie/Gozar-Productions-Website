@@ -367,7 +367,8 @@
 		text-shadow: none;
 		word-break: keep-all;
 		&:not(.scrolled) {
-			background-color: rgba(var(--background), 0.85);
+			background-color: rgba(var(--background), 0.7);
+			backdrop-filter: blur(5px);
 			will-change: background-color;
 			& li {
 				border-top-color: rgba(var(--foreground), 0);
