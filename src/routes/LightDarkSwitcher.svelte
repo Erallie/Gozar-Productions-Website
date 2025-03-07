@@ -22,7 +22,7 @@
 </script>
 
 <label>
-	<input type="checkbox" bind:checked={isDarkMode} readonly={false} />
+	<input type="checkbox" bind:checked={isDarkMode} />
 	<span class="toggle-thumb"></span>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
