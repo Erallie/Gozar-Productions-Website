@@ -66,7 +66,10 @@
 		font-size: 0.95rem;
 		margin: calc(20px * var(--margin-top-multiplier)) 20px
 			calc(20px * var(--margin-bottom-multiplier));
-		transition: background-color 0.3s;
+		transition:
+			background-color 0.3s,
+			color 1s,
+			border-color 1s;
 
 		& > svg {
 			width: auto;

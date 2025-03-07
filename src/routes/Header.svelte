@@ -266,13 +266,15 @@
 		& hr {
 			width: 0px;
 			border: none;
-			border-top: 1px solid black;
+			border-top: 1px solid rgba(var(--foreground));
 			margin: -1px auto;
-			transition: width 1s;
+			transition:
+				width 1s,
+				border-color 1s;
 		}
 
 		&.scrolled {
-			background-color: rgba(255, 255, 255, 0.7);
+			background-color: rgba(var(--background), 0.7);
 			backdrop-filter: blur(5px);
 
 			& h2,
@@ -288,7 +290,7 @@
 					text-shadow 1s;
 			}
 			& h1 {
-				color: black;
+				color: rgb(var(--foreground));
 				margin-top: 0px;
 				margin-bottom: 0px;
 				text-shadow: none;
@@ -365,10 +367,10 @@
 		text-shadow: none;
 		word-break: keep-all;
 		&:not(.scrolled) {
-			background-color: rgba(255, 255, 255, 0.85);
+			background-color: rgba(var(--background), 0.85);
 			will-change: background-color;
 			& li {
-				border-top-color: rgba(0, 0, 0, 0);
+				border-top-color: rgba(var(--foreground), 0);
 				border-top-width: 0px;
 				transition:
 					border-top-color 0.3s,
@@ -385,15 +387,17 @@
 			height: 100%;
 			align-items: center;
 			padding: 0 0.5rem;
-			color: black;
+			color: rgb(var(--foreground));
 			font-size: 0.8rem;
 			text-transform: uppercase;
 			letter-spacing: 0.1em;
 			text-decoration: none;
-			transition: background-color 0.2s linear;
+			transition:
+				background-color 0.2s linear,
+				color 1s;
 			font-weight: initial;
 			&:hover {
-				background-color: rgba(0, 0, 0, 0.2);
+				background-color: rgba(var(--foreground), 0.2);
 			}
 		} /* 
 		& button {

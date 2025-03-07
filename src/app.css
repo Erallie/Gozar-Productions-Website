@@ -58,7 +58,7 @@ section {
 	}
 }
 
-button/* :not([aria-label="menu"]) */ {
+button {
 	& > svg {
 		width: auto;
 		/* aspect-ratio: 200 / 60; */
@@ -77,12 +77,19 @@ button/* :not([aria-label="menu"]) */ {
 }
 
 a {
-	color: rgb(106, 91, 213);
 	font-weight: 700;
 	text-decoration: none;
 	&:hover {
 		text-decoration: underline;
 	}
+}
+
+.light a {
+	color: rgb(106, 91, 213);
+}
+
+.dark a {
+	color: rgb(151, 151, 255);
 }
 
 @media (max-width: 480px) {

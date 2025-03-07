@@ -31,8 +31,9 @@
 	style="
         {type === SectionType.Image
 		? `--image-src: url(${backgroundSource});`
-		: ''}
-        --text-color: {color};
+		: ''} {type === SectionType.White || type === SectionType.First
+		? '--text-color: var(--foreground);'
+		: `--text-color: ${color};`}
         --shadow-color: {shadowColor}; scroll-margin-top: {type !==
 	SectionType.First
 		? `${$barFinalHeight}px`
@@ -67,14 +68,20 @@
 		&.first {
 			background-image: linear-gradient(
 				180deg,
-				rgba(255, 255, 255, 0) 0%,
-				rgba(255, 255, 255, 0.45) 37.5%,
-				rgba(255, 255, 255, 0.9) 75%
+				rgba(var(--background), 0) 0%,
+				rgba(var(--background), 0.45) 37.5%,
+				rgba(var(--background), 0.9) 75%
 			);
 			padding-top: 15rem;
+			transition:
+				background-image 1s,
+				color 1s;
 		}
 		&.white {
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: rgba(var(--background), 0.8);
+			transition:
+				background-color 1s,
+				color 1s;
 		}
 		&.image {
 			background-image: var(--image-src);

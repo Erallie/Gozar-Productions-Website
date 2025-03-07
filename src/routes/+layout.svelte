@@ -3,11 +3,16 @@
 
 	import logo from "$lib/images/gozar-productions-logo.svg";
 	import "../app.css";
+	import { onMount } from "svelte";
+	import LightDarkSwitcher from "./LightDarkSwitcher.svelte";
 
 	let { children } = $props();
+
+	let isDarkMode: boolean = $state(false);
 </script>
 
-<div class="app">
+<div class="app {isDarkMode ? 'dark' : 'light'}">
+	<LightDarkSwitcher bind:isDarkMode />
 	<Header
 		title="Gozar Productions"
 		subtitle="Where creativity takes flight"
@@ -43,6 +48,15 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100dvh;
+	}
+
+	.dark {
+		--background: 0, 0, 0;
+		--foreground: 255, 255, 255;
+	}
+	.light {
+		--background: 255, 255, 255;
+		--foreground: 0, 0, 0;
 	}
 
 	main {

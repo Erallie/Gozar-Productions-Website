@@ -1,0 +1,138 @@
+<script lang="ts">
+	import { onMount } from "svelte";
+
+	let { isDarkMode = $bindable() } = $props();
+
+	const updateTheme = (event: MediaQueryListEvent) => {
+		isDarkMode = event.matches;
+	};
+
+	onMount(() => {
+		const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+		isDarkMode = mediaQuery.matches; // Set initial value
+
+		// Listen for changes
+		mediaQuery.addEventListener("change", updateTheme);
+
+		// Cleanup listener on component destroy
+		return () => {
+			mediaQuery.removeEventListener("change", updateTheme);
+		};
+	});
+</script>
+
+<label>
+	<input type="checkbox" bind:checked={isDarkMode} readonly={false} />
+	<span class="toggle-thumb"></span>
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="10 10 80 80"
+		width="100"
+		height="100"
+	>
+		<defs>
+			<mask id="moonShadow">
+				<!-- White area is visible, black area is hidden -->
+				<rect x="0" y="0" width="100" height="100" fill="white" />
+				<circle cx="70" cy="30" r="40" fill="black" />
+			</mask>
+		</defs>
+
+		<circle
+			cx="50"
+			cy="50"
+			r="40"
+			fill="currentColor"
+			stroke="0"
+			mask="url(#moonShadow)"
+		/>
+	</svg>
+	<svg
+		width="100px"
+		height="100px"
+		viewBox="0 0 100 100"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<circle cx="50" cy="50" r="20" fill="currentColor" stroke-width="0" />
+		<g stroke-width="5" stroke="currentColor">
+			<line x1="20" y1="50" x2="0" y2="50" />
+			<line x1="80" y1="50" x2="100" y2="50" />
+			<line x1="50" y1="20" x2="50" y2="0" />
+			<line x1="50" y1="80" x2="50" y2="100" />
+			<line x1="30" y1="30" x2="10" y2="10" />
+			<line x1="70" y1="30" x2="90" y2="10" />
+			<line x1="70" y1="70" x2="90" y2="90" />
+			<line x1="30" y1="70" x2="10" y2="90" />
+		</g>
+	</svg>
+</label>
+
+<style>
+	label {
+		display: inline-block;
+		position: fixed;
+		top: 10px;
+		left: 10px;
+		width: 60px;
+		height: 34px;
+		/* position: relative */
+		z-index: 200;
+		color: rgb(var(--foreground));
+		transition: color 1s;
+		& > svg {
+			/* z-index: 201; */
+			display: flex; /* Hide the SVG by default */
+			position: absolute; /* Position SVGs absolutely */
+			top: 22.5%; /* Align to the top of the label */
+			width: 55%; /* Full width */
+			height: 55%; /* Full height */
+			justify-content: space-between;
+			cursor: pointer;
+			&:first-of-type {
+				left: 0px;
+			}
+			&:last-of-type {
+				right: 0px;
+			}
+		}
+	}
+
+	.toggle-thumb {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: rgb(var(--background));
+		border-radius: 40px;
+		border: 2px solid rgb(var(--foreground));
+		cursor: pointer;
+		transition:
+			background-color 1s,
+			border-color 1s;
+		&:before {
+			z-index: 1;
+			content: "";
+			height: 80%;
+			width: 26px;
+			position: absolute;
+			left: calc(10% - 2px);
+			border: none;
+			bottom: 10%;
+			border-radius: 50%;
+			background-color: rgb(var(--foreground));
+			transition: 0.4s all ease;
+		}
+	}
+	input[type="checkbox"] {
+		opacity: 0;
+		width: 0;
+		height: 0;
+		&:checked + .toggle-thumb:before {
+			transform: translateX(calc(100% - 2px));
+		}
+	}
+</style>
