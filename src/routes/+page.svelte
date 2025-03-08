@@ -13,10 +13,7 @@
 	<meta name="description" content={description} />
 	<meta property="og:title" content="{title}: A Musical Film Company" />
 	<meta property="og:description" content={description} />
-	<meta
-		property="og:image"
-		content="https://static.wixstatic.com/media/3d52c1_ea36ec3c8e3b48948b1a1d72011d99b4%7Emv2.jpeg/v1/fit/w_2500,h_1330,al_c/3d52c1_ea36ec3c8e3b48948b1a1d72011d99b4%7Emv2.jpeg"
-	/>
+	<meta property="og:image" content="/website-preview.png" />
 	<meta property="og:image:width" content="2500" />
 	<meta property="og:image:height" content="1330" />
 	<meta property="og:url" content="https://www.gozarproductions.com" />
