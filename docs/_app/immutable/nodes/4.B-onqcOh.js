@@ -1,4 +1,4 @@
-import{t as a,h as p,a as t}from"../chunks/CqFbMUyq.js";import"../chunks/Du12ES2T.js";import{f,$ as y,s as i,L as s}from"../chunks/FDR-IPPa.js";import{L as n}from"../chunks/DtQidpCp.js";var v=a(`<p>If you require any more information or have any questions about our
+import{t as a,h as p,a as t}from"../chunks/CLui-zne.js";import"../chunks/DAUiprJv.js";import{n as f,$ as y,v as i,K as s}from"../chunks/BHpofqVJ.js";import{L as n}from"../chunks/BYnWR8Ts.js";var v=a(`<p>If you require any more information or have any questions about our
 		site's disclaimer, please feel free to contact us by email at <a href="mailto:contact@gozarproductions.com" class="svelte-1j61v21">contact@gozarproductions.com</a>.</p>`),b=a(`<h2>Disclaimers</h2> <p>All the information on this website - <a href="/" class="svelte-1j61v21">GozarProductions.com</a> - is published in good faith and for general information purpose only.
 		Gozar Productions does not make any warranties about the completeness, reliability
 		and accuracy of this information. Any action you take upon the information

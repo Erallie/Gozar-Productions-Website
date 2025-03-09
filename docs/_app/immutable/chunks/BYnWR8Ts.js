@@ -1,0 +1,1 @@
+import{t as r,a as o}from"./CLui-zne.js";import{t as i,q as m,r as n}from"./BHpofqVJ.js";import{s as c}from"./DcX_2_Gz.js";import{s as p}from"./Cmm1N9Uc.js";var d=r('<section class="svelte-msdre0"><!></section>');function u(s,e){var t=d(),a=m(t);c(a,()=>e.children),n(t),i(()=>p(t,"id",e.id)),o(s,t)}export{u as L};

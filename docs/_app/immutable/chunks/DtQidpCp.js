@@ -1,1 +1,0 @@
-import{t as r,a as o}from"./CqFbMUyq.js";import{t as i,c as m,r as c}from"./FDR-IPPa.js";import{s as n}from"./CAUVFgRU.js";import{s as p}from"./TGOPxxMa.js";var d=r('<section class="svelte-msdre0"><!></section>');function u(s,e){var t=d(),a=m(t);n(a,()=>e.children),c(t),i(()=>p(t,"id",e.id)),o(s,t)}export{u as L};
