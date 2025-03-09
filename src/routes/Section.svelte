@@ -137,8 +137,8 @@
 		}
 	}
 
-	@supports not (background-attachment: fixed) {
-		.background-image {
+	@supports not (background-size: cover) {
+		section > div.background-image {
 			background: none;
 			& > img {
 				display: block;
