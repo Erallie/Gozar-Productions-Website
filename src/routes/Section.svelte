@@ -47,7 +47,13 @@
 			Your browser does not support the video tag.
 		</video>
 	{:else if type == SectionType.Image}
-		<div class="background-image"></div>
+		<div class="background-image">
+			<img
+				src={backgroundSource}
+				alt="Background"
+				class="background-img"
+			/>
+		</div>
 	{/if}
 	<div>
 		{@render children()}
@@ -128,6 +134,12 @@
 				text-align: center; /* Center the text */
 				padding: 20px; /* Add some padding */
 			}
+		}
+	}
+
+	@supports not (background-size: cover) {
+		.background-image > img {
+			display: block;
 		}
 	}
 </style>
