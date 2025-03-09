@@ -4,11 +4,21 @@
 		SectionType,
 		TextColor,
 	} from "$lib/types/types";
+	import { onMount } from "svelte";
 	let { id, type, backgroundSource, textColor, children }: SectionProps =
 		$props();
 
 	import { barFinalHeight } from "./stores";
 
+	let section: HTMLElement;
+
+	let isIOS: boolean = $state(false);
+
+	onMount(() => {
+		isIOS =
+			/iPad|iPhone|iPod/.test(navigator.userAgent) &&
+			!(window as any).MSStream;
+	});
 	// svelte-ignore non_reactive_update
 	let color: string;
 	// svelte-ignore non_reactive_update
@@ -27,7 +37,8 @@
 
 <section
 	{id}
-	class={type}
+	bind:this={section}
+	class="{type} {isIOS ? 'ios' : ''}"
 	style="
         {type === SectionType.Image
 		? `--image-src: url(${backgroundSource});`
@@ -104,6 +115,9 @@
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
+			&.ios {
+				background-attachment: scroll;
+			}
 		}
 		&.image,
 		&.video {
@@ -134,12 +148,6 @@
 				text-align: center; /* Center the text */
 				padding: 20px; /* Add some padding */
 			}
-		}
-	}
-
-	@supports not (background-attachment: fixed) {
-		section.image {
-			background-attachment: scroll;
 		}
 	}
 </style>
