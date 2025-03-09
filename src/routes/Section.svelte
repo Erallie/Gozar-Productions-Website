@@ -137,7 +137,7 @@
 		}
 	}
 
-	@supports not (background-size: cover) {
+	@supports not (background-attachment: fixed) {
 		.background-image {
 			background: none;
 			& > img {
