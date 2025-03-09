@@ -8,17 +8,13 @@
 <LegalSection title="Introduction">
 	<p>
 		At <strong>Gozar Productions</strong>, accessible from
-		<a rel="noopener" href="https://gozarproductions.com/"
-			>gozarproductions.com</a
-		> and all its subdomains, we value the privacy of our visitors. This Privacy
-		Policy explains what information we collect, how we use it, and your rights
-		regarding your data.
+		<a href="/">gozarproductions.com</a> and all its subdomains, we value the
+		privacy of our visitors. This Privacy Policy explains what information we
+		collect, how we use it, and your rights regarding your data.
 	</p>
 	<p>
 		This Privacy Policy applies to <strong
-			><a rel="noopener" href="https://gozarproductions.com/"
-				>gozarproductions.com</a
-			></strong
+			><a href="/">gozarproductions.com</a></strong
 		>
 		and all of its subdomains. However, it does <strong>not</strong> apply to
 		any code-based projects that Gozar Productions provides, even if they are
@@ -27,7 +23,6 @@
 	</p>
 	<p>
 		If you have any questions about this policy, feel free to contact us at <a
-			rel="noopener"
 			href="mailto:contact@gozarproductions.com"
 			>contact@gozarproductions.com</a
 		>.
@@ -61,7 +56,6 @@
 			<strong>Cloudflare</strong> – Provides security and performance
 			enhancements. Cloudflare may collect IP addresses and other
 			technical data. (<a
-				rel="noopener"
 				href="https://www.cloudflare.com/privacypolicy/"
 				target="_blank">Cloudflare Privacy Policy</a
 			>)
@@ -70,7 +64,6 @@
 			<strong>GitHub Pages</strong> – Our website is hosted on GitHub
 			Pages, which may collect visitor data such as IP addresses and
 			browser details. (<a
-				rel="noopener"
 				target="_blank"
 				href="https://docs.github.com/en/github/site-policy/github-privacy-statement"
 				>GitHub Privacy Policy</a
@@ -79,7 +72,6 @@
 		<li>
 			<strong>PayPal</strong> – If you choose to donate, PayPal may
 			collect personal and financial information. (<a
-				rel="noopener"
 				href="https://www.paypal.com/us/legalhub/paypal/privacy-full"
 				target="_blank">PayPal Privacy Policy</a
 			>)
@@ -94,9 +86,7 @@
 	<ul>
 		<li>
 			<strong>YouTube, GitHub, Discord</strong> (linked from
-			<a rel="noopener" href="https://gozarproductions.com/"
-				>gozarproductions.com</a
-			>)
+			<a href="/">gozarproductions.com</a>)
 		</li>
 		<li>
 			<strong
@@ -104,7 +94,7 @@
 				Music</strong
 			>
 			(linked from
-			<a rel="noopener" href="https://music.gozarproductions.com/"
+			<a href="https://music.gozarproductions.com/"
 				>music.gozarproductions.com</a
 			>)
 		</li>
