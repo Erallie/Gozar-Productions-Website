@@ -5,8 +5,7 @@
 <svelte:head>
 	<title>Privacy Policy</title>
 </svelte:head>
-<LegalSection>
-	<h2>Introduction</h2>
+<LegalSection title="Introduction">
 	<p>
 		At <strong>Gozar Productions</strong>, accessible from
 		<a rel="noopener" href="https://gozarproductions.com/"
@@ -34,8 +33,7 @@
 		>.
 	</p>
 </LegalSection>
-<LegalSection>
-	<h2>Information We Collect</h2>
+<LegalSection title="Information We Collect">
 	<p>
 		We do not actively collect personal information from visitors. However,
 		the following data may be processed:
@@ -116,23 +114,20 @@
 		interacting with them.
 	</p>
 </LegalSection>
-<LegalSection>
-	<h2>How We Use Your Information</h2>
+<LegalSection title="How We Use Your Information">
 	<p>
 		We only use stored cookies to enhance your browsing experience. We do
 		not collect, store, or share personal data ourselves.
 	</p>
 </LegalSection>
-<LegalSection>
-	<h2>Data Sharing & Security</h2>
+<LegalSection title="Data Sharing & Security">
 	<p>
 		Since we do not collect personal data, we do not share any with third
 		parties. Any data collected by external platforms is managed under their
 		respective privacy policies.
 	</p>
 </LegalSection>
-<LegalSection>
-	<h2>Your Rights & Choices</h2>
+<LegalSection title="Your Rights & Choices">
 	<p>
 		As we do not process personal data, there are no user accounts or stored
 		information to access, modify, or delete. However, you may:
@@ -149,8 +144,7 @@
 		</li>
 	</ul>
 </LegalSection>
-<LegalSection>
-	<h2>Updates to This Policy</h2>
+<LegalSection title="Updates to This Policy">
 	<p>
 		We may update this Privacy Policy from time to time. Any changes will be
 		reflected on this page with an updated revision date.
