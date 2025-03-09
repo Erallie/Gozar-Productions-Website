@@ -91,7 +91,7 @@
 		display: inline-block;
 		position: fixed;
 		top: 10px;
-		left: 10px;
+		right: 10px;
 		width: 60px;
 		height: 34px;
 		/* position: relative */
