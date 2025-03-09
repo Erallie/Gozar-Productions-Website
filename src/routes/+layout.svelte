@@ -62,10 +62,6 @@
 		--foreground: 0, 0, 0;
 	}
 
-	.background-image > img {
-		display: block;
-	}
-
 	main {
 		flex: 1;
 		display: flex;

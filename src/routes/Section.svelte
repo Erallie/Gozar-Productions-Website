@@ -137,12 +137,9 @@
 		}
 	}
 
-	@supports not (background-size: cover) {
-		section > div.background-image {
-			background: none;
-			& > img {
-				display: block;
-			}
+	@supports (background-size: cover) {
+		section > div.background-image > img {
+			display: none;
 		}
 	}
 </style>
