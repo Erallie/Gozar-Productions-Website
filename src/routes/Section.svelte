@@ -138,8 +138,11 @@
 	}
 
 	@supports not (background-size: cover) {
-		.background-image > img {
-			display: block;
+		.background-image {
+			background: none;
+			& > img {
+				display: block;
+			}
 		}
 	}
 </style>
