@@ -31,11 +31,12 @@
 	style="
         {type === SectionType.Image
 		? `--image-src: url(${backgroundSource});`
-		: ''} {type === SectionType.White || type === SectionType.First
+		: ''}
+        {type === SectionType.White || type === SectionType.First
 		? '--text-color: var(--foreground);'
 		: `--text-color: ${color};`}
-        --shadow-color: {shadowColor}; scroll-margin-top: {type !==
-	SectionType.First
+        --shadow-color: {shadowColor};
+        scroll-margin-top: {type !== SectionType.First
 		? `${$barFinalHeight}px`
 		: '0px'}
     "
@@ -45,6 +46,8 @@
 			<source src={backgroundSource} type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
+	{:else if type == SectionType.Image}
+		<div class="background-image"></div>
 	{/if}
 	<div>
 		{@render children()}
@@ -53,14 +56,20 @@
 
 <style>
 	section {
+		position: relative;
 		color: rgb(var(--text-color));
 		width: 100%;
 		padding: 5rem 0px;
-		& > div {
+		overflow: hidden;
+		& > div:last-of-type {
 			text-align: center;
 			margin-left: auto;
 			margin-right: auto;
 			max-width: min(90%, 25rem);
+		}
+		& > div.background-image {
+			position: absolute;
+			background-image: var(--image-src);
 		}
 		&#contact > div {
 			max-width: min(90%, 50rem);
@@ -83,13 +92,13 @@
 				background-color 1s,
 				color 1s;
 		}
-		&.image {
+		/* &.image {
 			background-image: var(--image-src);
 			background-attachment: fixed;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
-		}
+		} */
 		&.image,
 		&.video {
 			text-shadow: 0 0 1em rgb(var(--shadow-color));

@@ -12,6 +12,10 @@
 </script>
 
 <div class="app {isDarkMode ? 'dark' : 'light'}">
+	<div
+		class="background-image"
+		style="background-image: url('/gozar-productions-profile-pic.png');"
+	></div>
 	<LightDarkSwitcher bind:isDarkMode />
 	<Header
 		title="Gozar Productions"

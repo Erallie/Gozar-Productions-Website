@@ -32,11 +32,11 @@ body {
 	width: 100%;
 	margin: 0px; /* Remove default margin */
 	/*height: 100dvh; /* Full height of the viewport */
-	background-image: url("$lib/images/gozar-productions-profile-pic.png"); /* Set background image */
+	/* background-image: url("$lib/images/gozar-productions-profile-pic.png");
 	background-attachment: fixed;
-	background-size: cover; /* Cover the entire viewport */
-	background-position: center; /* Center the image */
-	background-repeat: no-repeat; /* Do not repeat the image */
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat; */
 }
 
 p {
@@ -90,6 +90,20 @@ a {
 
 .dark a {
 	color: rgb(151, 151, 255);
+}
+
+.background-image {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/* background-image: url("your-image.jpg"); */
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: -1; /* Send it behind the content */
 }
 
 @media (max-width: 480px) {
