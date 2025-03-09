@@ -17,11 +17,11 @@
 		src="/gozar-productions-profile-pic.png"
 		alt="Background"
 	/>
-	<LightDarkSwitcher bind:isDarkMode />
 	<Header
 		title="Gozar Productions"
 		subtitle="Where creativity takes flight"
 		pretitle="Welcome to"
+		bind:isDarkMode
 	/>
 
 	<main>

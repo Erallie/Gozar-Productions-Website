@@ -31,6 +31,7 @@ export type HeaderProps = {
 	title: string;
 	subtitle: string;
 	pretitle?: string;
+	isDarkMode: boolean;
 	children?: any;
 };
 

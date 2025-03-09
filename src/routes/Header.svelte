@@ -8,8 +8,15 @@
 		barFinalHeight,
 		initialHeightSet,
 	} from "./stores";
+	import LightDarkSwitcher from "./LightDarkSwitcher.svelte";
 
-	let { title, subtitle, pretitle, children }: HeaderProps = $props();
+	let {
+		title,
+		subtitle,
+		pretitle,
+		isDarkMode = $bindable(),
+		children,
+	}: HeaderProps = $props();
 
 	const initialPadding = 100; // Initial height of the header
 	const finalPadding = 0;
@@ -110,6 +117,8 @@
 		bind:this={headerBar}
 		class={scrolled ? "scrolled" : ""}
 	>
+		<div class="backdrop"></div>
+		<LightDarkSwitcher bind:isDarkMode addedClass="desktop-switcher" />
 		<div>
 			<img src={logo} alt="Gozar Productions Logo" />
 			<hgroup
@@ -193,6 +202,7 @@
 					<a href="/#donate">Donate</a>
 				</li>
 			</ul>
+			<LightDarkSwitcher bind:isDarkMode addedClass="mobile-switcher" />
 		</nav>
 	</div>
 </header>
@@ -206,18 +216,25 @@
 	}
 	#header-bar {
 		position: fixed;
-		transition:
-			height 1s,
-			background-color 1s;
+		transition: height 1s;
 		text-transform: uppercase;
 		text-align: center;
 		color: white;
 		width: 100%;
 		top: 0;
-		& > div {
+		& > div:not(.backdrop) {
 			display: inline-flex;
 			align-items: center;
 			flex-grow: 1;
+		}
+		& > div.backdrop {
+			transition: background-color 1s;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
 		}
 
 		& .pretitle,
@@ -274,8 +291,10 @@
 		}
 
 		&.scrolled {
-			background-color: rgba(var(--background), 0.7);
-			backdrop-filter: blur(5px);
+			& > div.backdrop {
+				background-color: rgba(var(--background), 0.7);
+				backdrop-filter: blur(5px);
+			}
 
 			& h2,
 			& .pretitle {

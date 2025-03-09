@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import Cookies from "js-cookie";
 
-	let { isDarkMode = $bindable() } = $props();
+	let { isDarkMode = $bindable(), addedClass } = $props();
 
 	const updateTheme = (event: MediaQueryListEvent) => {
 		isDarkMode = event.matches;
@@ -40,9 +40,9 @@
 	}
 </script>
 
-<label>
+<label class={addedClass}>
 	<input type="checkbox" bind:checked={isDarkMode} onchange={saveDarkMode} />
-	<span class="toggle-thumb"></span>
+	<span class="toggle-thumb"><div class="backdrop"></div></span>
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="10 10 80 80"
@@ -50,7 +50,7 @@
 		height="100"
 	>
 		<defs>
-			<mask id="moonShadow">
+			<mask id="moonShadow-{addedClass}">
 				<!-- White area is visible, black area is hidden -->
 				<rect x="0" y="0" width="100" height="100" fill="white" />
 				<circle cx="70" cy="30" r="40" fill="black" />
@@ -63,7 +63,7 @@
 			r="40"
 			fill="currentColor"
 			stroke="0"
-			mask="url(#moonShadow)"
+			mask="url(#moonShadow-{addedClass})"
 		/>
 	</svg>
 	<svg
@@ -88,12 +88,20 @@
 
 <style>
 	label {
-		display: inline-block;
-		position: fixed;
-		top: 10px;
-		right: 10px;
 		width: 60px;
 		height: 34px;
+		&.desktop-switcher {
+			display: inline-block;
+			position: fixed;
+			top: 10px;
+			left: 10px;
+		}
+		&.mobile-switcher {
+			display: none;
+			position: absolute;
+			top: calc(100% + 10px);
+			left: 10px;
+		}
 		/* position: relative */
 		z-index: 200;
 		color: rgb(var(--foreground));
@@ -125,8 +133,18 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		background-color: rgb(var(--background));
 		border-radius: 40px;
+		& > .backdrop {
+			position: absolute;
+			background-color: rgba(var(--background), 0.7);
+			backdrop-filter: blur(5px);
+			border-radius: 40px;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			transition: background-color 1s;
+		}
 		border: 2px solid rgb(var(--foreground));
 		cursor: pointer;
 		transition:

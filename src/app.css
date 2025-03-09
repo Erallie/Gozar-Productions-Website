@@ -91,6 +91,20 @@ a {
 .dark a {
 	color: rgb(151, 151, 255);
 }
+.scrolled label.desktop-switcher .toggle-thumb > .backdrop {
+	background-color: rgba(var(--background), 0);
+}
+
+@media (max-width: 600px) {
+	.scrolled label {
+		&.desktop-switcher {
+			display: none;
+		}
+		&.mobile-switcher {
+			display: block;
+		}
+	}
+}
 
 @media (max-width: 480px) {
 	/* Styles for mobile devices */
