@@ -437,7 +437,7 @@
 		} */
 	}
 
-	@media (max-width: 590px) {
+	@media (max-width: 588px) {
 		nav {
 			/* display: none; */
 			/* height: max-content; */
