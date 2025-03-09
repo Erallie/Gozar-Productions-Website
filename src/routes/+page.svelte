@@ -167,7 +167,7 @@
 	</p>
 	<Button
 		link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
-		newTab={true}>Donate</Button
+		newTab={false}>Donate</Button
 	>
 </Section>
 
