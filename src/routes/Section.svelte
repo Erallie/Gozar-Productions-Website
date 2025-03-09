@@ -46,14 +46,14 @@
 			<source src={backgroundSource} type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
-	{:else if type == SectionType.Image}
+		<!-- {:else if type == SectionType.Image}
 		<div class="background-image">
 			<img
 				src={backgroundSource}
 				alt="Background"
 				class="background-img"
 			/>
-		</div>
+		</div> -->
 	{/if}
 	<div>
 		{@render children()}
@@ -73,10 +73,10 @@
 			margin-right: auto;
 			max-width: min(90%, 25rem);
 		}
-		& > div.background-image {
+		/* & > div.background-image {
 			position: absolute;
 			background-image: var(--image-src);
-		}
+		} */
 		&#contact > div {
 			max-width: min(90%, 50rem);
 		}
@@ -98,13 +98,13 @@
 				background-color 1s,
 				color 1s;
 		}
-		/* &.image {
+		&.image {
 			background-image: var(--image-src);
 			background-attachment: fixed;
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
-		} */
+		}
 		&.image,
 		&.video {
 			text-shadow: 0 0 1em rgb(var(--shadow-color));
@@ -137,9 +137,9 @@
 		}
 	}
 
-	@supports (background-size: cover) {
-		section > div.background-image > img {
-			display: none;
+	@supports not (background-attachment: fixed) {
+		section.image {
+			background-attachment: scroll;
 		}
 	}
 </style>

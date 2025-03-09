@@ -92,26 +92,6 @@ a {
 	color: rgb(151, 151, 255);
 }
 
-.background-image {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	/* background-image: url("your-image.jpg"); */
-	background-attachment: fixed;
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-	z-index: -1; /* Send it behind the content */
-	& > img {
-		object-fit: cover;
-		width: 100%;
-		height: 100%;
-		z-index: -1;
-	}
-}
-
 @media (max-width: 480px) {
 	/* Styles for mobile devices */
 	/* :root {

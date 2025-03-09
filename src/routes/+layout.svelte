@@ -12,9 +12,11 @@
 </script>
 
 <div class="app {isDarkMode ? 'dark' : 'light'}">
-	<div class="background-image">
-		<img src="/gozar-productions-profile-pic.png" alt="Background" />
-	</div>
+	<img
+		class="background-image"
+		src="/gozar-productions-profile-pic.png"
+		alt="Background"
+	/>
 	<LightDarkSwitcher bind:isDarkMode />
 	<Header
 		title="Gozar Productions"
@@ -60,6 +62,18 @@
 	.light {
 		--background: 255, 255, 255;
 		--foreground: 0, 0, 0;
+	}
+
+	img.background-image {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
 	}
 
 	main {
