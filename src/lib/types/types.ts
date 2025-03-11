@@ -36,6 +36,6 @@ export type HeaderProps = {
 };
 
 export type LegalSectionProps = {
-	id?: string;
+	title: string;
 	children?: any;
 };
