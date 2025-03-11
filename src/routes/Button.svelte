@@ -6,6 +6,7 @@
 		customSVG,
 		marginTopMultiplier,
 		marginBottomMultiplier,
+		submit,
 		children,
 	}: ButtonProps = $props();
 
@@ -27,6 +28,7 @@
 		undefined
 			? `${marginBottomMultiplier}`
 			: '1'}"
+		type={submit ? "submit" : undefined}
 	>
 		{@render children()}
 		{#if !customSVG}
