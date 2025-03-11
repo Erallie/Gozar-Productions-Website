@@ -2,7 +2,7 @@
 	import Button from "./Button.svelte";
 	import Section from "./Section.svelte";
 	import { SectionType, TextColor } from "$lib/types/types";
-	import Donate from "./Donate.svelte";
+	/* import Donate from "./Donate.svelte"; */
 
 	const title = "Gozar Productions";
 	const description =
@@ -170,7 +170,7 @@
 		link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
 		newTab={false}>Donate</Button
 	>
-	<Donate />
+	<!-- <Donate /> -->
 </Section>
 
 <style>
