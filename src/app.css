@@ -50,7 +50,8 @@ section {
 		line-height: 1.2em;
 	}
 	&.video button,
-	&.image button {
+	&.image button,
+	&#donation-confirmation button {
 		text-shadow: 0 0 0.6em rgb(var(--shadow-color));
 		& > svg {
 			filter: drop-shadow(0 0 0.4em rgb(var(--shadow-color)));
