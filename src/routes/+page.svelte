@@ -14,7 +14,7 @@
 	<meta name="description" content={description} />
 	<meta property="og:title" content="{title}: A Musical Film Company" />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="/website-preview.png" />
+	<meta property="og:image" content="/website-preview.webp" />
 	<meta property="og:image:width" content="2500" />
 	<meta property="og:image:height" content="1330" />
 	<meta property="og:url" content="https://www.gozarproductions.com" />
@@ -52,7 +52,7 @@
 <Section
 	id="music"
 	type={SectionType.Image}
-	backgroundSource="/music-background.png"
+	backgroundSource="/music-background.webp"
 	textColor={TextColor.Black}
 >
 	<h2>Our music</h2>
@@ -70,7 +70,7 @@
 	id="code"
 	type={SectionType.Image}
 	textColor={TextColor.White}
-	backgroundSource="/code-background.png"
+	backgroundSource="/code-background.webp"
 >
 	<h2>Our code</h2>
 	<p>
@@ -157,7 +157,7 @@
 	id="donate"
 	type={SectionType.Image}
 	textColor={TextColor.White}
-	backgroundSource="/donate-background.png"
+	backgroundSource="/donate-background.webp"
 >
 	<h2>Donate</h2>
 	<p>

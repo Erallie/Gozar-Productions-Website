@@ -14,7 +14,7 @@
 <div class="app {isDarkMode ? 'dark' : 'light'}">
 	<img
 		class="background-image"
-		src="/gozar-productions-profile-pic.png"
+		src="/gozar-productions-profile-pic.webp"
 		alt="Background"
 	/>
 	<Header
