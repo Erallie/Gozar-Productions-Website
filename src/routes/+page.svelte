@@ -35,7 +35,7 @@
 <Section
 	id="watch"
 	type={SectionType.Video}
-	backgroundSource="/watch-background.mp4"
+	backgroundSource="/watch-background.webm"
 	textColor={TextColor.White}
 >
 	<h2>Watch us on YouTube</h2>
