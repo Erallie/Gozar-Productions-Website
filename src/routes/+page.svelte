@@ -98,7 +98,7 @@
 		<span class="or">- or -</span>
 		<div>
 			<Button
-				link="https://discord.gg/cCCEk7BX4W"
+				link="https://discord.gozarproductions.com/"
 				newTab={true}
 				customSVG
 				marginTopMultiplier={0}
