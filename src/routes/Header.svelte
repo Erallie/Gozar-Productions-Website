@@ -397,11 +397,6 @@
 					border-top-width 0.3s;
 				will-change: border-top-color, border-top-width;
 			}
-		} /* 
-		& a,
-		& button {
-			transition: background-color 0.2s linear;
-		} */
 		& a {
 			display: flex;
 			height: 100%;
@@ -419,22 +414,7 @@
 			&:hover {
 				background-color: rgba(var(--foreground), 0.2);
 			}
-		} /* 
-		& button {
-			border: none;
-			background: none;
-			font-family: inherit;
-			padding: 5px;
-			& > svg {
-				vertical-align: middle;
-				height: 1.5em;
-				width: min-content;
-			}
 		}
-		& a:hover,
-		& button:hover {
-				background-color: rgba(0, 0, 0, 0.2);
-		} */
 	}
 
 	@media (max-width: 588px) {
