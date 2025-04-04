@@ -52,7 +52,7 @@
 <Section
 	id="music"
 	type={SectionType.Image}
-	backgroundSource="/music-background.webp"
+	backgroundSource="/music-background-lighter-35.webp"
 	textColor={TextColor.Black}
 >
 	<h2>Our music</h2>

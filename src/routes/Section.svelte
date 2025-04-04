@@ -149,5 +149,10 @@
 				padding: 20px; /* Add some padding */
 			}
 		}
+		&#music {
+			text-shadow:
+				0 0 1em rgb(var(--shadow-color)),
+				0 0 1em rgb(var(--shadow-color));
+		}
 	}
 </style>

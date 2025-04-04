@@ -51,6 +51,11 @@ section {
 			filter: drop-shadow(0 0 0.4em rgb(var(--shadow-color)));
 		}
 	}
+	&#music button {
+		text-shadow:
+			0 0 0.6em rgb(var(--shadow-color)),
+			0 0 0.6em rgb(var(--shadow-color));
+	}
 }
 
 button {
