@@ -54,7 +54,7 @@
 >
 	{#if type == SectionType.Video}
 		<video autoplay muted loop>
-			<source src={backgroundSource} type="video/mp4" />
+			<source src={backgroundSource} type="video/webm" />
 			Your browser does not support the video tag.
 		</video>
 	{/if}
