@@ -57,14 +57,6 @@
 			<source src={backgroundSource} type="video/mp4" />
 			Your browser does not support the video tag.
 		</video>
-		<!-- {:else if type == SectionType.Image}
-		<div class="background-image">
-			<img
-				src={backgroundSource}
-				alt="Background"
-				class="background-img"
-			/>
-		</div> -->
 	{/if}
 	<div>
 		{@render children()}
@@ -84,10 +76,6 @@
 			margin-right: auto;
 			max-width: min(90%, 25rem);
 		}
-		/* & > div.background-image {
-			position: absolute;
-			background-image: var(--image-src);
-		} */
 		&#contact > div {
 			max-width: min(90%, 50rem);
 		}
