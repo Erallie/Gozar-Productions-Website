@@ -109,6 +109,27 @@
 		</svg>
 	</Button>
 </Section>
+
+<Section
+	id="donate"
+	type={SectionType.Image}
+	textColor={TextColor.White}
+	backgroundSource="/donate-background.webp"
+>
+	<h2>Donate</h2>
+	<p>
+		Being a small company, we don't really make any money. So it's difficult
+		to provide for the resources necessary to make great videos. If you
+		pitch in even just a dollar or two, it could help us reach great
+		heights.
+	</p>
+	<Button
+		link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
+		newTab={false}>Donate</Button
+	>
+	<!-- <Donate /> -->
+</Section>
+
 <Section id="contact" type={SectionType.White} textColor={TextColor.Black}>
 	<h2>Contact us</h2>
 	<p>We're always here to answer your questions!</p>
@@ -177,26 +198,6 @@
 			</Button>
 		</div>
 	</div>
-</Section>
-
-<Section
-	id="donate"
-	type={SectionType.Image}
-	textColor={TextColor.White}
-	backgroundSource="/donate-background.webp"
->
-	<h2>Donate</h2>
-	<p>
-		Being a small company, we don't really make any money. So it's difficult
-		to provide for the resources necessary to make great videos. If you
-		pitch in even just a dollar or two, it could help us reach great
-		heights.
-	</p>
-	<Button
-		link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
-		newTab={false}>Donate</Button
-	>
-	<!-- <Donate /> -->
 </Section>
 
 <style>
