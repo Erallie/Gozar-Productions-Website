@@ -133,6 +133,7 @@
 		</div>
 		<hr />
 		<nav class={scrolled ? "scrolled" : ""}>
+			<div class="backdrop"></div>
 			<!-- <button aria-label="menu" onclick={openMenu}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -188,18 +189,45 @@
 					<a href="/#code">Our Code</a>
 				</li>
 				<li
-					aria-current={page.url.pathname.startsWith("/#contact")
+					aria-current={page.url.pathname.startsWith(
+						"/#get-notified"
+					) ||
+					page.url.pathname.startsWith("/#donate") ||
+					page.url.pathname.startsWith("/#contact")
 						? "page"
 						: undefined}
 				>
-					<a href="/#contact">Contact</a>
-				</li>
-				<li
-					aria-current={page.url.pathname.startsWith("/#donate")
-						? "page"
-						: undefined}
-				>
-					<a href="/#donate">Donate</a>
+					<span>More</span>
+					<ul>
+						<div class="backdrop"></div>
+						<li
+							aria-current={page.url.pathname.startsWith(
+								"/#get-notified"
+							)
+								? "page"
+								: undefined}
+						>
+							<a href="/#get-notified">Get Notified</a>
+						</li>
+						<li
+							aria-current={page.url.pathname.startsWith(
+								"/#donate"
+							)
+								? "page"
+								: undefined}
+						>
+							<a href="/#donate">Donate</a>
+						</li>
+						<li
+							aria-current={page.url.pathname.startsWith(
+								"/#contact"
+							)
+								? "page"
+								: undefined}
+						>
+							<a href="/#contact">Contact</a>
+						</li>
+					</ul>
 				</li>
 			</ul>
 			<LightDarkSwitcher bind:isDarkMode addedClass="mobile-switcher" />
@@ -211,6 +239,14 @@
 ></section>
 
 <style>
+	div.backdrop {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -1;
+	}
 	header {
 		z-index: 50;
 	}
@@ -229,12 +265,6 @@
 		}
 		& > div.backdrop {
 			transition: background-color 1s;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			z-index: -1;
 		}
 
 		& .pretitle,
@@ -359,36 +389,28 @@
 		}
 	}
 
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		flex-grow: 1;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
 	nav {
 		position: relative;
 		display: flex;
 		justify-content: center;
 		height: 100%;
 		flex-basis: auto;
-		transition: background-color 1s;
-		will-change: background-color;
+		/* will-change: background-color; */
 		text-shadow: none;
 		word-break: keep-all;
+		& > div.backdrop {
+			transition: background-color 1s;
+		}
+		& li {
+			position: relative;
+			height: 100%;
+		}
 		&:not(.scrolled) {
-			background-color: rgba(var(--background), 0.7);
-			backdrop-filter: blur(5px);
-			will-change: background-color;
+			& > div.backdrop {
+				background-color: rgba(var(--background), 0.7);
+				backdrop-filter: blur(5px);
+				will-change: background-color;
+			}
 			& li {
 				border-top-color: rgba(var(--foreground), 0);
 				border-top-width: 0px;
@@ -397,7 +419,54 @@
 					border-top-width 0.3s;
 				will-change: border-top-color, border-top-width;
 			}
-		& a {
+		}
+		& ul {
+			list-style-type: none;
+			padding: 0px;
+			/* text-align: center; */
+			/* position: relative; */
+			& > div.backdrop {
+				background-color: rgba(var(--background), 0.7);
+				backdrop-filter: blur(5px);
+			}
+		}
+		& > ul {
+			/* position: relative; */
+			padding: 0;
+			margin: 0;
+			height: 3em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			list-style: none;
+			flex-grow: 1;
+			& li {
+				width: max-content;
+				&:hover {
+					cursor: default;
+					& > a {
+						background-color: rgba(var(--foreground), 0.2);
+					}
+					& > ul {
+						display: block;
+					}
+				}
+			}
+			& > li {
+				& ul {
+					display: none; /* Hide nested ul by default */
+					position: absolute;
+					/* background-color: rgba(var(--background), 0.7); */
+					& li {
+						min-width: 100%;
+						height: 40px;
+						margin: auto;
+					}
+				}
+			}
+		}
+		& a,
+		& span {
 			display: flex;
 			height: 100%;
 			align-items: center;
@@ -417,7 +486,7 @@
 		}
 	}
 
-	@media (max-width: 588px) {
+	@media (max-width: 484px) {
 		nav {
 			/* display: none; */
 			/* height: max-content; */
