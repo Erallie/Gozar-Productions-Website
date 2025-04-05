@@ -86,9 +86,9 @@
 <Section id="get-notified" type={SectionType.White} textColor={TextColor.Black}>
 	<h2>Get Notified</h2>
 	<p>
-		We share regular updates on our current works and seek active input from
-		our Discord community. Join our server to be the first to know about our
-		latest projects or get involved in the things we do.
+		We share frequent updates on our current projects and seek active input
+		from our Discord community. Join our server to be the first to know
+		about our latest works or to get involved in the things we do.
 	</p>
 	<Button
 		link="https://discord.gozarproductions.com/"
