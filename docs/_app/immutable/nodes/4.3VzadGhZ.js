@@ -1,4 +1,4 @@
-import{t as a,a as o}from"../chunks/D5yc7j-T.js";import"../chunks/DXBecmi8.js";import{n as f,ab as h,v as n,ac as i}from"../chunks/CcU-RqjI.js";import{h as g}from"../chunks/BdnUZWi7.js";import{L as r}from"../chunks/B8p8ypqJ.js";var v=a(`<p>All information on this website - <a href="/" class="svelte-1j61v21">GozarProductions.com</a> -
+import{t as a,a as o}from"../chunks/D5yc7j-T.js";import"../chunks/DXBecmi8.js";import{n as f,ab as h,v as n,ac as i}from"../chunks/CcU-RqjI.js";import{h as g}from"../chunks/BdnUZWi7.js";import{L as r}from"../chunks/BzDrWB3B.js";var v=a(`<p>All information on this website - <a href="/" class="svelte-1j61v21">GozarProductions.com</a> -
 		and its subdomains is provided in good faith for general informational purposes
 		only. While we strive to offer accurate and reliable content, Gozar Productions
 		makes no warranties regarding the completeness, reliability, or accuracy
