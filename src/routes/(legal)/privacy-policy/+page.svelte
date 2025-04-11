@@ -1,5 +1,6 @@
 <script>
 	import LegalSection from "../LegalSection.svelte";
+	import { barFinalHeight } from "../../stores";
 </script>
 
 <svelte:head>
@@ -33,8 +34,24 @@
 		We do not actively collect personal information from visitors. However,
 		the following data may be processed:
 	</p>
-	<h3>Cookies (Stored on Your Device)</h3>
-	<p>We use cookies solely for user preferences:</p>
+	<a href="#cookies">
+		<h3 id="cookies" style="scroll-margin-top: {$barFinalHeight}px">
+			Cookies (Stored on Your Device)
+		</h3>
+	</a>
+	<p>We use cookies for the following purposes:</p>
+	<a href="#essential-cookies">
+		<h4
+			id="essential-cookies"
+			style="scroll-margin-top: {$barFinalHeight}px"
+		>
+			Essential Cookies
+		</h4>
+	</a>
+	<p>
+		These cookies are necessary for the website to function and cannot be
+		disabled. They include:
+	</p>
 	<ul>
 		<li>
 			<strong>Light/Dark Mode Preference</strong> – To remember your preferred
@@ -45,8 +62,34 @@
 			a better user experience.
 		</li>
 	</ul>
+	<a href="#non-essential-cookies">
+		<h4
+			id="non-essential-cookies"
+			style="scroll-margin-top: {$barFinalHeight}px"
+		>
+			Non-Essential Cookies
+		</h4>
+	</a>
+	<p>
+		These cookies are not strictly necessary but may enhance your browsing
+		experience. They include:
+	</p>
+	<ul>
+		<li>
+			<strong>Embedded Content</strong> – Certain embedded content, such as
+			Google Calendar, may store cookies on your device when interacted with
+			on our website.
+		</li>
+	</ul>
 	<p>You can manage or disable cookies through your browser settings.</p>
-	<h3>Third-Party Data Collection</h3>
+	<a href="#third-party-data">
+		<h3
+			id="third-party-data"
+			style="scroll-margin-top: {$barFinalHeight}px"
+		>
+			Third-Party Data Collection
+		</h3>
+	</a>
 	<p>
 		While we do not collect personal data ourselves, certain third-party
 		services may process data when you interact with them:
@@ -76,12 +119,26 @@
 				target="_blank">PayPal Privacy Policy</a
 			>)
 		</li>
+		<li>
+			<strong>Short.io</strong> – The link to our Discord server is
+			redirected through Short.io, which may collect data related to your
+			interaction with the shortened URL. (<a
+				href="https://short.io/privacy"
+				target="_blank">Short.io Privacy Policy</a
+			>)
+		</li>
 	</ul>
-	<h3>External Links & Embedded Content</h3>
+	<a href="#external-links">
+		<h3 id="external-links" style="scroll-margin-top: {$barFinalHeight}px">
+			External Links & Embedded Content
+		</h3>
+	</a>
 	<p>
-		Our website contains links to third-party platforms. These services are
-		not operated by us and may collect data according to their own privacy
-		policies. These include, but are not limited to:
+		Our website contains links to third-party platforms and embeds content
+		from external services. These services are not operated by us and may
+		collect data according to their own privacy policies. Please note that
+		embedded content, such as Google Calendar, may store cookies on your
+		device. These include, but are not limited to:
 	</p>
 	<ul>
 		<li>
@@ -96,6 +153,13 @@
 			(linked from
 			<a href="https://music.gozarproductions.com/"
 				>music.gozarproductions.com</a
+			>)
+		</li>
+		<li>
+			<strong>Google Calendar</strong> (embedded on
+			<a
+				href="https://music.gozarproductions.com/performances#calendar"
+				target="_blank">music.gozarproductions.com/performances</a
 			>)
 		</li>
 	</ul>
@@ -139,7 +203,7 @@
 		We may update this Privacy Policy from time to time. Any changes will be
 		reflected on this page with an updated revision date.
 	</p>
-	<p><strong>Last Updated:</strong> March 9th, 2025</p>
+	<p><strong>Last Updated:</strong> April 11th, 2025</p>
 </LegalSection>
 
 <style>
@@ -148,5 +212,23 @@
 	}
 	li {
 		margin: 8px 0;
+	}
+
+	a:has(> h3),
+	a:has(> h4) {
+		color: inherit;
+	}
+
+	h3,
+	h4 {
+		font-weight: 400;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	h3 {
+		font-size: 1.5em;
+	}
+	h4 {
+		font-size: 1.25em;
 	}
 </style>

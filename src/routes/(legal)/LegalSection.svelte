@@ -12,11 +12,7 @@
 		.replaceAll("&", "and");
 </script>
 
-<section
-	{id}
-	style="
-        scroll-margin-top: {$barFinalHeight}px"
->
+<section {id} style="scroll-margin-top: {$barFinalHeight}px">
 	<h2><a href="#{id}">{title}</a></h2>
 	{@render children()}
 </section>
