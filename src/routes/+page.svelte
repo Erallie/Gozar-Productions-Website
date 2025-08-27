@@ -123,9 +123,8 @@
 		pitch in even just a dollar or two, it could help us reach great
 		heights.
 	</p>
-	<Button
-		link="https://www.paypal.com/donate/?hosted_button_id=PHHGM83BQZ8MA"
-		newTab={false}>Donate</Button
+	<Button link="https://ko-fi.com/gozarproductions" newTab={true}
+		>Donate</Button
 	>
 	<!-- <Donate /> -->
 </Section>
