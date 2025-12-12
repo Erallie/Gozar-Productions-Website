@@ -90,9 +90,9 @@
 >
 	<h2>Our Shop</h2>
 	<p>
-		We sell merchandise and high-quality downloads of our content from our
-		online store. All proceeds go toward helping us make bigger and better
-		content.
+		We offer merchandise and high-quality downloads through our online
+		store. All proceeds directly support the creation of bigger and better
+		projects.
 	</p>
 	<Button link="https://ko-fi.com/gozarproductions/shop" newTab={true}
 		>Browse Shop</Button
