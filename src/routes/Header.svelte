@@ -189,6 +189,13 @@
 					<a href="/#code">Our Code</a>
 				</li>
 				<li
+					aria-current={page.url.pathname.startsWith("/#shop")
+						? "page"
+						: undefined}
+				>
+					<a href="/#shop">Our Shop</a>
+				</li>
+				<li
 					aria-current={page.url.pathname.startsWith(
 						"/#get-notified"
 					) ||
