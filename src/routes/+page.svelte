@@ -75,11 +75,27 @@
 	<h2>Our code</h2>
 	<p>
 		Along with our musical and cinematic endeavors, we also create a number
-		of code-based tools, ranging from Discord bots to VR aids. We aim to
-		make our projects free for all to use.
+		of code-based tools, ranging from Discord bots and Obsidian plugins to
+		VR aids. We aim to make our projects free for all to use.
 	</p>
 	<Button link="https://github.com/Erallie" newTab={true}
 		>View our projects</Button
+	>
+</Section>
+<Section
+	id="shop"
+	type={SectionType.Image}
+	textColor={TextColor.Black}
+	backgroundSource="/shop-background.webp"
+>
+	<h2>Our Shop</h2>
+	<p>
+		We sell merchandise and high-quality downloads of our content from our
+		online store. All proceeds go toward helping us make bigger and better
+		content.
+	</p>
+	<Button link="https://ko-fi.com/gozarproductions/shop" newTab={true}
+		>Browse Shop</Button
 	>
 </Section>
 
