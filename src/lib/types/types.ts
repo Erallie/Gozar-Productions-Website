@@ -25,6 +25,7 @@ export type ButtonProps = {
 	marginTopMultiplier?: number;
 	marginBottomMultiplier?: number;
 	submit?: boolean;
+	columns?: boolean;
 	children: any;
 };
 

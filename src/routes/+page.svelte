@@ -83,12 +83,12 @@
 	>
 </Section>
 <Section
-	id="shop"
+	id="merch"
 	type={SectionType.Image}
 	textColor={TextColor.Black}
 	backgroundSource="/shop-background.webp"
 >
-	<h2>Our Shop</h2>
+	<h2>Our Merch</h2>
 	<p>
 		We offer merchandise and high-quality downloads through our online
 		store. All proceeds directly support the creation of bigger and better
@@ -97,6 +97,31 @@
 	<Button link="https://ko-fi.com/gozarproductions/shop" newTab={true}
 		>Browse Shop</Button
 	>
+</Section>
+
+<Section
+	id="assets"
+	type={SectionType.Video}
+	textColor={TextColor.White}
+	backgroundSource="/vr-assets-background-2.webm"
+>
+	<h2>Our VR Assets</h2>
+	<p>
+		We just recently started selling assets for VR games like <a
+			href="https://hello.vrchat.com/"
+			target="_blank"
+			class="light-override">VRChat</a
+		>. While our collection is still small, we offer unique items that can
+		add a bit of magic to your VR gaming experience.
+	</p>
+	<div class="columns horizontal-container">
+		<Button link="https://erallie.booth.pm/" newTab={true} columns={true}
+			>Visit Booth</Button
+		>
+		<Button link="https://erallie.gumroad.com/" newTab={true} columns={true}
+			>Visit Gumroad</Button
+		>
+	</div>
 </Section>
 
 <Section id="get-notified" type={SectionType.White} textColor={TextColor.Black}>
@@ -216,6 +241,12 @@
 </Section>
 
 <style>
+	div.horizontal-container {
+		width: 40rem;
+		max-width: 90dvw;
+		margin-left: 50%;
+		transform: translateX(-50%);
+	}
 	div.columns {
 		display: flex;
 		flex-wrap: wrap;

@@ -189,11 +189,11 @@
 					<a href="/#code">Our Code</a>
 				</li>
 				<li
-					aria-current={page.url.pathname.startsWith("/#shop")
+					aria-current={page.url.pathname.startsWith("/#merch")
 						? "page"
 						: undefined}
 				>
-					<a href="/#shop">Our Shop</a>
+					<a href="/#merch">Our Merch</a>
 				</li>
 				<li
 					aria-current={page.url.pathname.startsWith(
@@ -207,6 +207,15 @@
 					<span>More</span>
 					<ul>
 						<div class="backdrop"></div>
+						<li
+							aria-current={page.url.pathname.startsWith(
+								"/#assets"
+							)
+								? "page"
+								: undefined}
+						>
+							<a href="/#assets">Our VR Assets</a>
+						</li>
 						<li
 							aria-current={page.url.pathname.startsWith(
 								"/#get-notified"

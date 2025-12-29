@@ -7,6 +7,7 @@
 		marginTopMultiplier,
 		marginBottomMultiplier,
 		submit,
+		columns,
 		children,
 	}: ButtonProps = $props();
 
@@ -19,7 +20,7 @@
 <a
 	href={link}
 	target={newTab ? "_blank" : undefined}
-	style="text-decoration: none;"
+	style="text-decoration: none; {columns ? 'flex-grow: 1;' : ''}"
 >
 	<button
 		style="--margin-top-multiplier: {marginTopMultiplier !== undefined
@@ -28,6 +29,7 @@
 		undefined
 			? `${marginBottomMultiplier}`
 			: '1'}"
+		class={columns ? "remove-margin" : ""}
 		type={submit ? "submit" : undefined}
 	>
 		{@render children()}
@@ -87,6 +89,13 @@
 			& > svg {
 				height: 1em;
 			}
+		}
+	}
+
+	@media (max-width: 680px) {
+		button.remove-margin {
+			margin: calc(14px * var(--margin-top-multiplier)) 20px
+				calc(14px * var(--margin-bottom-multiplier));
 		}
 	}
 </style>

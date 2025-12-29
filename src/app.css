@@ -88,7 +88,8 @@ a {
 	color: rgb(106, 91, 213);
 }
 
-.dark a {
+.dark a,
+a.light-override {
 	color: rgb(151, 151, 255);
 }
 .scrolled label.desktop-switcher .toggle-thumb > .backdrop {
