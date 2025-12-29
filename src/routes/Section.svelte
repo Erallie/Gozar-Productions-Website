@@ -116,18 +116,11 @@
 			overflow: hidden;
 			& > video {
 				position: absolute;
-				top: 50%;
-				left: 50%;
-				min-width: 100%;
-				min-height: 100%;
-				width: auto;
-				height: auto;
-				z-index: -1; /* Place video behind content */
-				transform: translate(-50%, -50%);
-				object-fit: cover; /* Ensures the video covers the entire area */
-				/* Optional: You can also set a max-width and max-height if needed */
-				max-width: none; /* Prevents the video from being constrained */
-				max-height: none; /* Prevents the video from being constrained */
+				inset: 0;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				z-index: -1;
 			}
 			& > div {
 				position: relative;
