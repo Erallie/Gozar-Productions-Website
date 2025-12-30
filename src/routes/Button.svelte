@@ -90,12 +90,12 @@
 				height: 1em;
 			}
 		}
-	}
-
-	@media (max-width: 680px) {
-		button.remove-margin {
+		&.remove-margin {
 			margin: calc(14px * var(--margin-top-multiplier)) 20px
 				calc(14px * var(--margin-bottom-multiplier));
 		}
+	}
+
+	@media (max-width: 680px) {
 	}
 </style>

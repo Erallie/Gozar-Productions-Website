@@ -121,6 +121,9 @@
 		<Button link="https://erallie.gumroad.com/" newTab={true} columns={true}
 			>Visit Gumroad</Button
 		>
+		<Button link="https://jinxxy.com/Erallie" newTab={true} columns={true}
+			>Visit Jinxxy</Button
+		>
 	</div>
 </Section>
 
