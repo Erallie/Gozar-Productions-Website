@@ -17,9 +17,15 @@
 	<meta property="og:image" content="/website-preview.webp" />
 	<meta property="og:image:width" content="2500" />
 	<meta property="og:image:height" content="1330" />
+	<meta property="og:image:type" content="image/webp" />
 	<meta property="og:url" content="https://www.gozarproductions.com" />
 	<meta property="og:site_name" content={title} />
 	<meta property="og:type" content="website" />
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="{title}: A Musical Film Company" />
+	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content="/website-preview.webp" />
 </svelte:head>
 
 <Section id="about" type={SectionType.First} textColor={TextColor.Black}>
