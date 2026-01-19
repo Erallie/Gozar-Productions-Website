@@ -84,7 +84,8 @@ a {
 	}
 }
 
-.light a {
+.light a,
+a.dark-override {
 	color: rgb(106, 91, 213);
 }
 

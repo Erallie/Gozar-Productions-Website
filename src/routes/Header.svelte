@@ -218,6 +218,15 @@
 						</li>
 						<li
 							aria-current={page.url.pathname.startsWith(
+								"/#disney"
+							)
+								? "page"
+								: undefined}
+						>
+							<a href="/#disney">Our Disney Balls</a>
+						</li>
+						<li
+							aria-current={page.url.pathname.startsWith(
 								"/#get-notified"
 							)
 								? "page"

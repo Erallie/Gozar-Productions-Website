@@ -133,6 +133,27 @@
 	</div>
 </Section>
 
+<Section
+	id="disney"
+	type={SectionType.Image}
+	textColor={TextColor.White}
+	backgroundSource="/disney-ball-background.webp"
+>
+	<h2>Our Disney Balls</h2>
+	<p>
+		Unaffiliated with Gozar Productions or The Walt Disney Company, we throw
+		Disney-themed balls in the metaverse through <a
+			href="https://hello.vrchat.com/"
+			target="_blank"
+			class="light-override">VRChat</a
+		>. With beautiful music, breathtaking performances, and a new King and
+		Queen announced each time, each event is a night you won't want to miss!
+	</p>
+	<Button link="https://disney.gozarproductions.com" newTab={false}
+		>Learn More</Button
+	>
+</Section>
+
 <Section id="get-notified" type={SectionType.White} textColor={TextColor.Black}>
 	<h2>Get Notified</h2>
 	<p>
