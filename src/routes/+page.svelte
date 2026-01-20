@@ -137,7 +137,7 @@
 	id="disney"
 	type={SectionType.Image}
 	textColor={TextColor.White}
-	backgroundSource="/disney-ball-background.webp"
+	backgroundSource="/disney-ball-background-4.webp"
 >
 	<h2>Our Disney Balls</h2>
 	<p>
