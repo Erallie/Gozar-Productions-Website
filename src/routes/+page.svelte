@@ -159,26 +159,97 @@
 	<p>
 		We share frequent updates on our current projects and seek active input
 		from our Discord community. Join our server to be the first to know
-		about our latest works or to get involved in the things we do.
+		about our latest works or to get involved in the things we do. Or follow
+		us on Facebook or Twitter!
 	</p>
-	<Button
-		link="https://discord.gozarproductions.com/"
-		newTab={true}
-		customSVG
-	>
-		Join our Discord
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			width="127.14px"
-			height="96.36px"
-			viewBox="0 0 127.14 96.36"
-		>
-			<path
-				fill="currentColor"
-				d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
-			/>
-		</svg>
-	</Button>
+
+	<div class="columns notified">
+		<div>
+			<Button
+				link="https://discord.gozarproductions.com/"
+				newTab={true}
+				customSVG
+				columns={true}
+			>
+				Join our Discord
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="127.14px"
+					height="96.36px"
+					viewBox="0 0 127.14 96.36"
+				>
+					<path
+						fill="currentColor"
+						d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"
+					/>
+				</svg>
+			</Button>
+		</div>
+		<span class="or">- or -</span>
+		<div class="two-horizontal-buttons">
+			<Button
+				link="https://facebook.com/GozarProductions"
+				newTab={true}
+				columns={true}
+				customSVG
+				>View our Facebook
+				<svg
+					version="1.0"
+					xmlns="http://www.w3.org/2000/svg"
+					width="2143.000000pt"
+					height="2143.000000pt"
+					viewBox="0 0 2143.000000 2143.000000"
+					preserveAspectRatio="xMidYMid meet"
+				>
+					<metadata>
+						Created by potrace 1.16, written by Peter Selinger
+						2001-2019
+					</metadata>
+					<g
+						transform="translate(0.000000,2143.000000) scale(0.100000,-0.100000)"
+						fill="currentColor"
+						stroke="none"
+					>
+						<path
+							d="M10115 21369 c-1118 -64 -2202 -296 -3245 -697 -416 -160 -990 -430
+-1375 -648 -1717 -970 -3119 -2372 -4089 -4089 -140 -247 -391 -755 -501
+-1015 -498 -1170 -773 -2354 -845 -3635 -13 -236 -13 -915 0 -1152 99 -1754
+605 -3410 1498 -4903 217 -363 559 -855 816 -1175 1638 -2040 3919 -3397 6471
+-3850 109 -19 199 -35 201 -35 2 0 4 1679 4 3730 l0 3730 -1355 0 -1355 0 0
+1545 0 1545 1355 0 1354 0 4 1393 c4 1479 3 1446 53 1792 183 1273 792 2233
+1769 2787 449 255 1011 426 1615 493 613 67 1625 16 2693 -135 154 -22 281
+-40 283 -40 2 0 4 -591 4 -1314 l0 -1315 -797 -4 c-853 -4 -892 -6 -1118 -59
+-583 -135 -971 -513 -1109 -1078 -55 -228 -56 -248 -56 -1431 l0 -1089 1475 0
+c1331 0 1475 -2 1475 -16 0 -16 -456 -3001 -466 -3047 l-6 -27 -1239 0 -1239
+0 -2 -3730 -3 -3730 25 5 c14 2 81 14 149 25 861 144 1812 441 2637 823 825
+383 1635 893 2324 1466 491 408 1013 930 1421 1421 1286 1547 2115 3461 2363
+5460 61 490 80 811 80 1345 0 535 -19 855 -80 1345 -320 2575 -1591 4962
+-3558 6685 -562 492 -1219 954 -1871 1315 -229 127 -695 355 -935 457 -1170
+501 -2363 780 -3639 853 -209 11 -975 11 -1186 -1z"
+						/>
+					</g>
+				</svg>
+			</Button>
+			<Button
+				link="https://x.com/ErikaGozar"
+				newTab={true}
+				columns={true}
+				customSVG
+				>View our Twitter <svg
+					width="1200"
+					height="1227"
+					viewBox="0 0 1200 1227"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z"
+						fill="currentColor"
+					/>
+				</svg>
+			</Button>
+		</div>
+	</div>
 </Section>
 
 <Section
@@ -276,19 +347,37 @@
 		max-width: 90dvw;
 		margin-left: 50%;
 		transform: translateX(-50%);
+		flex-wrap: wrap;
+	}
+	div.two-horizontal-buttons {
+		width: 46rem;
+		max-width: 90dvw;
+
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 	}
 	div.columns {
 		display: flex;
-		flex-wrap: wrap;
 		padding: 10px 0px;
+		&.notified {
+			/* width: min(90dvw, 840px);
+			margin-left: 50%;
+			transform: translateX(-50%); */
+			flex-direction: column;
+		}
 		& > * {
 			padding: 10px 0px;
 			flex-grow: 1;
 		}
-		& > :first-child {
+		&:not(.notified) > :first-child {
 			margin: auto 20px;
 		}
-		& > :last-child {
+		& > :last-child:not(.two-horizontal-buttons) {
 			margin: auto 0px;
 		}
 		& > .or {
@@ -310,8 +399,13 @@
 		width: 50%;
 	}
 	@media (max-width: 809px) {
-		.or {
-			width: 100%;
+		.columns {
+			flex-direction: column;
+		}
+	}
+	@media (max-width: 713px) {
+		div.two-horizontal-buttons {
+			flex-wrap: wrap;
 		}
 	}
 </style>
