@@ -76,7 +76,7 @@
 	$effect(() => {
 		const relativeUrl = page.url.pathname;
 
-		if (relativeUrl === "/" || relativeUrl === "") {
+		if (relativeUrl === "/") {
 			if (!$initialHeightSet && window.scrollY == 0) {
 				setTimeout(() => {
 					if (scrollY == 0) {
@@ -161,7 +161,7 @@
 					<a href="/">Home</a>
 				</li>
 				<li
-					aria-current={page.url.pathname === "/#about"
+					aria-current={page.url.pathname.startsWith("/#about")
 						? "page"
 						: undefined}
 				>
