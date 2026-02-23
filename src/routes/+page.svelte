@@ -31,24 +31,26 @@
 <Section id="about" type={SectionType.First} textColor={TextColor.Black}>
 	<h2>Who we are</h2>
 	<p>
-		Gozar Productions is a small film company on YouTube creating short
-		films and music videos with a passion for music. Birthed from a young
-		girl's aspirations and pet projects, this small company endeavors to
-		share our passions with the world for all to enjoy.
+		Gozar Productions is a small company engaging in projects ranging from
+		short films and music videos to Discord bots and Obsidian plugins to
+		live music performances in virtual reality. Birthed from a young girl's
+		aspirations and pet projects, this small company endeavors to share our
+		passions with the world for all to enjoy.
 	</p>
 </Section>
 
 <Section
-	id="watch"
+	id="videos"
 	type={SectionType.Video}
 	backgroundSource="/watch-background.webm"
 	textColor={TextColor.White}
 >
-	<h2>Watch us on YouTube</h2>
+	<h2>Our Videos</h2>
 	<p>
-		We believe in keeping our content as accessible as possible, even if it
-		means less money for us. The best way to do that is through YouTube,
-		where you can find all the videos we've made throughout the years.
+		Whether we're filming covers of Disney and musical theater favorites, or
+		sharing lyric videos of new original songs, or even producing fan short
+		films based on our favorite series, you can find all of our videos on
+		our YouTube channel.
 	</p>
 	<Button link="https://youtube.com/GozarProductions" newTab={true}>
 		Watch us now

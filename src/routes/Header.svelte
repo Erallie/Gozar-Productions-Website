@@ -168,11 +168,11 @@
 					<a href="/#about">About</a>
 				</li>
 				<li
-					aria-current={page.url.pathname.startsWith("/#watch")
+					aria-current={page.url.pathname.startsWith("/#videos")
 						? "page"
 						: undefined}
 				>
-					<a href="/#watch">Watch</a>
+					<a href="/#videos">Our Videos</a>
 				</li>
 				<li
 					aria-current={page.url.pathname.startsWith("/#music")
@@ -512,7 +512,7 @@
 		}
 	}
 
-	@media (max-width: 484px) {
+	@media (max-width: 615px) {
 		nav {
 			/* display: none; */
 			/* height: max-content; */
