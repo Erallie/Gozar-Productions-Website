@@ -250,7 +250,7 @@ c1331 0 1475 -2 1475 -16 0 -16 -456 -3001 -466 -3047 l-6 -27 -1239 0 -1239
 			</Button>
 
 			<Button
-				link="https://x.com/ErikaGozar"
+				link="https://bsky.app/profile/gozarproductions.bsky.social"
 				newTab={true}
 				columns={true}
 				customSVG
@@ -322,7 +322,7 @@ c1331 0 1475 -2 1475 -16 0 -16 -456 -3001 -466 -3047 l-6 -27 -1239 0 -1239
 				</svg>
 			</Button>
 			<Button
-				link="https://x.com/ErikaGozar"
+				link="https://www.instagram.com/gozarproductions/"
 				newTab={true}
 				columns={true}
 				customSVG
