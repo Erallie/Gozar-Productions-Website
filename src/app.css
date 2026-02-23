@@ -84,6 +84,11 @@ a {
 	}
 }
 
+.notification-button > svg {
+	padding: 0;
+	transform: translateY(0.5px);
+}
+
 .light a,
 a.dark-override {
 	color: rgb(106, 91, 213);
