@@ -481,6 +481,7 @@
 				& ul {
 					display: none; /* Hide nested ul by default */
 					position: absolute;
+					right: 0;
 					/* background-color: rgba(var(--background), 0.7); */
 					& li {
 						min-width: 100%;
