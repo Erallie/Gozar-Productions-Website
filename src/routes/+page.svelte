@@ -66,9 +66,9 @@
 >
 	<h2>Our music</h2>
 	<p>
-		The genius behind our original music is the mind of a young girl named
-		Erika Gozar. She writes all of our original scores with simply an ear
-		for music and no formal training in composition.
+		The genius behind our original music is the mind of a brilliant woman
+		named Erika Gozar. She writes all of our original scores with simply an
+		ear for music and no formal training in composition.
 	</p>
 	<Button link="https://music.gozarproductions.com" newTab={false}>
 		Listen now

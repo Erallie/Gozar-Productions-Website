@@ -10,9 +10,9 @@ import{f as h,a as e,t as S,b as M}from"../chunks/rmLAMBJA.js";import"../chunks/
 		passions with the world for all to enjoy.</p>`,1),f1=h(`<h2>Our Videos</h2> <p>Whether we're filming covers of Disney and musical theater favorites, or
 		sharing lyric videos of new original songs, or even producing fan short
 		films based on our favorite series, you can find all of our videos on
-		our YouTube channel.</p> <!>`,1),w1=h(`<h2>Our music</h2> <p>The genius behind our original music is the mind of a young girl named
-		Erika Gozar. She writes all of our original scores with simply an ear
-		for music and no formal training in composition.</p> <!>`,1),_1=h(`<h2>Our code</h2> <p>Along with our musical and cinematic endeavors, we also create a number
+		our YouTube channel.</p> <!>`,1),w1=h(`<h2>Our music</h2> <p>The genius behind our original music is the mind of a brilliant woman
+		named Erika Gozar. She writes all of our original scores with simply an
+		ear for music and no formal training in composition.</p> <!>`,1),_1=h(`<h2>Our code</h2> <p>Along with our musical and cinematic endeavors, we also create a number
 		of code-based tools, ranging from Discord bots and Obsidian plugins to
 		VR aids. We aim to make our projects free for all to use.</p> <!>`,1),C1=h(`<h2>Our Merch</h2> <p>We offer merchandise and high-quality downloads through our online
 		store. All proceeds directly support the creation of bigger and better
