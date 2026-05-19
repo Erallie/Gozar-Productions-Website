@@ -91,6 +91,24 @@
 		>View our projects</Button
 	>
 </Section>
+
+<Section
+	id="twitch"
+	type={SectionType.Image}
+	textColor={TextColor.White}
+	backgroundSource="/twitch-background-3.webp"
+>
+	<h2>Our Twitch Streams</h2>
+	<p>
+		We also have streams on Twitch, where we're either singing or playing
+		video games! If you wanna get a chance to meet the team, join us on
+		Twitch during our streams!
+	</p>
+	<Button link="https://twitch.tv/Erallie" newTab={true}
+		>View our Twitch</Button
+	>
+</Section>
+
 <Section
 	id="merch"
 	type={SectionType.Image}
