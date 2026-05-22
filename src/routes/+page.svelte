@@ -7,7 +7,7 @@
 
 	const title = "Gozar Productions";
 	const description =
-		"Gozar Productions is a small film company on YouTube creating short films and music videos with a passion for music. Birthed from a young girl's aspirations and pet projects, this small company endeavors to share our passions with the world for all to enjoy.";
+		"Gozar Productions is a small company engaging in projects ranging from short films and music videos to Discord bots and Obsidian plugins to live music performances in virtual reality. Birthed from a young girl's aspirations and pet projects, this small company endeavors to share our passions with the world for all to enjoy.";
 </script>
 
 <svelte:head>
