@@ -4,6 +4,7 @@
 
 <svelte:head>
 	<title>Disclaimer</title>
+    <link rel="canonical" href="https://gozarproductions.com/disclaimer" />
 </svelte:head>
 <LegalSection title="Disclaimers">
 	<p>

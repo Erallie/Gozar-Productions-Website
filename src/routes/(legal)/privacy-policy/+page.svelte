@@ -5,6 +5,7 @@
 
 <svelte:head>
 	<title>Privacy Policy</title>
+    <link rel="canonical" href="https://gozarproductions.com/privacy-policy" />
 </svelte:head>
 <LegalSection title="Introduction">
 	<p>

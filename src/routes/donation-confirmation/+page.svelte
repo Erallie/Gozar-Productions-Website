@@ -2,6 +2,11 @@
 	import Button from "../Button.svelte";
 </script>
 
+<svelte:head>
+	<title>Donation Confirmation</title>
+    <link rel="canonical" href="https://gozarproductions.com/donation-confirmation" />
+</svelte:head>
+
 <section id="donation-confirmation">
 	<hgroup>
 		<h1>Thank you</h1>
