@@ -2,7 +2,6 @@
 	import { page } from "$app/state";
 	import logo from "$lib/images/gozar-productions-logo.svg";
 	import { type HeaderProps } from "$lib/types/types";
-	import { onMount } from "svelte";
 	import {
 		barInitialHeight,
 		barFinalHeight,
