@@ -153,6 +153,15 @@
 				>music.gozarproductions.com</a
 			>)
 		</li>
+  <li>
+			<strong
+				>VRChat</strong
+			>
+			(linked from
+			<a href="https://music.gozarproductions.com/performances"
+				>music.gozarproductions.com/performances</a> and <a href="https://disney.gozarproductions.com/"
+				>disney.gozarproductions.com</a>)
+		</li>
 		<li>
 			<strong>Google Calendar</strong> (embedded on
 			<a
