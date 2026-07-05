@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Privacy Policy</title>
-    <link rel="canonical" href="https://gozarproductions.com/privacy-policy" />
+	<link rel="canonical" href="https://gozarproductions.com/privacy-policy" />
 </svelte:head>
 <LegalSection title="Introduction">
 	<p>
@@ -38,28 +38,6 @@
 		</h3>
 	</a>
 	<p>We use cookies for the following purposes:</p>
-	<a href="#essential-cookies">
-		<h4
-			id="essential-cookies"
-			style="scroll-margin-top: {$barFinalHeight}px"
-		>
-			Essential Cookies
-		</h4>
-	</a>
-	<p>
-		These cookies are necessary for the website to function and cannot be
-		disabled. They include:
-	</p>
-	<ul>
-		<li>
-			<strong>Light/Dark Mode Preference</strong> – To remember your preferred
-			theme.
-		</li>
-		<li>
-			<strong>Volume Preference</strong> – To save your audio settings for
-			a better user experience.
-		</li>
-	</ul>
 	<a href="#non-essential-cookies">
 		<h4
 			id="non-essential-cookies"
@@ -111,8 +89,8 @@
 			>)
 		</li>
 		<li>
-			<strong>Ko-fi</strong> – If you choose to donate, Ko-fi may
-			collect personal and financial information. (<a
+			<strong>Ko-fi</strong> – If you choose to donate, Ko-fi may collect
+			personal and financial information. (<a
 				href="https://more.ko-fi.com/privacy"
 				target="_blank">Ko-fi Privacy Policy</a
 			>)
@@ -140,36 +118,49 @@
 	</p>
 	<ul>
 		<li>
-			<strong>YouTube, GitHub, Discord</strong> (linked from
+			<strong>GitHub, Discord</strong> (linked from
 			<a href="/">gozarproductions.com</a>)
 		</li>
 		<li>
+			<strong>YouTube </strong> (linked from
+			<a href="/">gozarproductions.com</a> and
+			<a href="https://music.gozarproductions.com/"
+				>music.gozarproductions.com</a
+			>
+			and embedded in
+			<a href="https://disney.gozarproductions.com/" target="_blank"
+				>disney.gozarproductions.com</a
+			>)
+		</li>
+		<li>
 			<strong
-				>Spotify, Apple Music, YouTube, YouTube Music, Pandora, Amazon
-				Music</strong
+				>Spotify, Apple Music, YouTube Music, Pandora, Amazon Music</strong
 			>
 			(linked from
 			<a href="https://music.gozarproductions.com/"
 				>music.gozarproductions.com</a
 			>)
 		</li>
-  <li>
-			<strong
-				>VRChat</strong
-			>
+		<li>
+			<strong>VRChat</strong>
 			(linked from
 			<a href="https://music.gozarproductions.com/performances"
-				>music.gozarproductions.com/performances</a> and <a href="https://disney.gozarproductions.com/"
-				>disney.gozarproductions.com</a>)
+				>music.gozarproductions.com/performances</a
+			>
+			and
+			<a href="https://disney.gozarproductions.com/"
+				>disney.gozarproductions.com</a
+			>)
 		</li>
 		<li>
-			<strong>Google Calendar</strong> (embedded on
+			<strong>Google Calendar</strong> (embedded in
 			<a
 				href="https://music.gozarproductions.com/performances#calendar"
 				target="_blank">music.gozarproductions.com/performances</a
-			> and <a
-				href="https://calendar.gozarproductions.com/"
-				target="_blank">calendar.gozarproductions.com</a
+			>
+			and
+			<a href="https://calendar.gozarproductions.com/" target="_blank"
+				>calendar.gozarproductions.com</a
 			>)
 		</li>
 	</ul>
