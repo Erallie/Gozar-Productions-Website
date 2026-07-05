@@ -3,8 +3,6 @@
 
 	import logo from "$lib/images/gozar-productions-logo.svg";
 	import "../app.css";
-	import { onMount } from "svelte";
-	import LightDarkSwitcher from "./LightDarkSwitcher.svelte";
 
 	let { children } = $props();
 

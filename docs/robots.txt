@@ -1,5 +1,6 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Allow: /
+Disallow: /donation-confirmation
 
 Sitemap: https://gozarproductions.com/sitemap.xml
