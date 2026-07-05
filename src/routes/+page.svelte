@@ -28,7 +28,7 @@
 	<meta name="twitter:description" content={description} />
 	<meta name="twitter:image" content="/website-preview.webp" />
 
-    <link rel="canonical" href="https://gozarproductions.com/" />
+	<link rel="canonical" href="https://gozarproductions.com/" />
 </svelte:head>
 
 <Section id="about" type={SectionType.First} textColor={TextColor.Black}>
