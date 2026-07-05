@@ -18,10 +18,7 @@
 		This Privacy Policy applies to <strong
 			><a href="/">gozarproductions.com</a></strong
 		>
-		and all of its subdomains. However, it does <strong>not</strong> apply to
-		any code-based projects that Gozar Productions provides, even if they are
-		hosted on our subdomains. Those projects may have their own separate privacy
-		policies.
+		and all of its subdomains.
 	</p>
 	<p>
 		If you have any questions about this policy, feel free to contact us at <a
@@ -114,10 +111,10 @@
 			>)
 		</li>
 		<li>
-			<strong>PayPal</strong> – If you choose to donate, PayPal may
+			<strong>Ko-fi</strong> – If you choose to donate, Ko-fi may
 			collect personal and financial information. (<a
-				href="https://www.paypal.com/us/legalhub/paypal/privacy-full"
-				target="_blank">PayPal Privacy Policy</a
+				href="https://more.ko-fi.com/privacy"
+				target="_blank">Ko-fi Privacy Policy</a
 			>)
 		</li>
 		<li>
@@ -161,6 +158,9 @@
 			<a
 				href="https://music.gozarproductions.com/performances#calendar"
 				target="_blank">music.gozarproductions.com/performances</a
+			> and <a
+				href="https://calendar.gozarproductions.com/"
+				target="_blank">calendar.gozarproductions.com</a
 			>)
 		</li>
 	</ul>
@@ -193,7 +193,7 @@
 			or disable cookies.
 		</li>
 		<li>
-			<strong>Review Third-Party Policies</strong> – If you interact with PayPal,
+			<strong>Review Third-Party Policies</strong> – If you interact with Ko-fi,
 			Cloudflare, GitHub Pages, or any linked services, refer to their privacy
 			policies for details on your rights.
 		</li>
@@ -204,7 +204,7 @@
 		We may update this Privacy Policy from time to time. Any changes will be
 		reflected on this page with an updated revision date.
 	</p>
-	<p><strong>Last Updated:</strong> April 11th, 2025</p>
+	<p><strong>Last Updated:</strong> July 4th, 2026</p>
 </LegalSection>
 
 <style>
