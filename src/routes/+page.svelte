@@ -123,7 +123,7 @@
 		store. All proceeds directly support the creation of bigger and better
 		projects.
 	</p>
-	<Button link="https://ko-fi.com/gozarproductions/shop" newTab={true}
+	<Button link="https://ko-fi.com/gozarproductions/shop/merch" newTab={true}
 		>Browse Shop</Button
 	>
 </Section>
