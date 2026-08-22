@@ -18,7 +18,7 @@
 		This Privacy Policy applies to <strong
 			><a href="/">gozarproductions.com</a></strong
 		>
-		and all of its subdomains.
+		and all of its subdomains, <strong>except for websites, dashboards, or other services associated with Discord bots operated by Gozar Productions</strong>. Discord bots are governed by their own respective privacy policies, even when their websites, dashboards, or other services are hosted on a gozarproductions.com subdomain.
 	</p>
 	<p>
 		If you have any questions about this policy, feel free to contact us at <a
@@ -204,7 +204,7 @@
 		We may update this Privacy Policy from time to time. Any changes will be
 		reflected on this page with an updated revision date.
 	</p>
-	<p><strong>Last Updated:</strong> July 4th, 2026</p>
+	<p><strong>Last Updated:</strong> August 22nd, 2026</p>
 </LegalSection>
 
 <style>
