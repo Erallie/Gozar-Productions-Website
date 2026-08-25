@@ -15,7 +15,7 @@
 	<meta name="description" content={description} />
 	<meta property="og:title" content="{title}: A Musical Film Company" />
 	<meta property="og:description" content={description} />
-	<meta property="og:image" content="/website-preview.webp" />
+	<meta property="og:image" content="https://gozarproductions.com/website-preview.webp" />
 	<meta property="og:image:width" content="2500" />
 	<meta property="og:image:height" content="1330" />
 	<meta property="og:image:type" content="image/webp" />
@@ -26,7 +26,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="{title}: A Musical Film Company" />
 	<meta name="twitter:description" content={description} />
-	<meta name="twitter:image" content="/website-preview.webp" />
+	<meta name="twitter:image" content="https://gozarproductions.com/website-preview.webp" />
 
 	<link rel="canonical" href="https://gozarproductions.com/" />
 </svelte:head>
