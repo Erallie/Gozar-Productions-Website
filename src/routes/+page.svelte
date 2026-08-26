@@ -19,7 +19,7 @@
 	<meta property="og:image:width" content="1920" />
 	<meta property="og:image:height" content="1080" />
 	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:url" content="https://www.gozarproductions.com" />
+	<meta property="og:url" content="https://gozarproductions.com" />
 	<meta property="og:site_name" content={title} />
 	<meta property="og:type" content="website" />
 
