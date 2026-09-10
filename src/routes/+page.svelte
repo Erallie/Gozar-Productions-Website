@@ -95,20 +95,45 @@
 </Section>
 
 <Section
-	id="twitch"
+	id="streams"
 	type={SectionType.Image}
 	textColor={TextColor.White}
 	backgroundSource="/twitch-background-3.webp"
 >
-	<h2>Our Twitch Streams</h2>
+	<h2>Our Streams</h2>
 	<p>
-		We also have streams on Twitch, where we're either singing or playing
-		video games! If you wanna get a chance to meet the team, join us on
-		Twitch during our streams!
+		We also have streams on Twitch, YouTube, and TikTok, where we're either singing, playing
+		video games, writing and voice acting, or just chatting with you guys! If you wanna get a chance to meet the team, join us
+		during our streams!
 	</p>
-	<Button link="https://twitch.tv/Erallie" newTab={true}
-		>View our Twitch</Button
-	>
+    
+	<div class="columns horizontal-container">
+        <Button link="https://twitch.tv/Erallie" newTab={true} columns={true}
+            >Visit Twitch</Button
+        >
+		<Button link="https://www.youtube.com/@ErallieVODs" newTab={true} columns={true}
+			>Visit YouTube</Button
+		>
+		<Button link="https://www.tiktok.com/@erallievods" newTab={true} columns={true}
+			>Visit TikTok</Button
+		>
+	</div>
+</Section>
+
+
+<Section
+	id="songlist"
+	type={SectionType.White}
+	textColor={TextColor.Black}
+>
+	<h2>Our Songlist</h2>
+	<p>
+		During our Singing Streams, we choose to sing <em>only</em> your song requests. We have a website where you can view our available songs, request a song, and watch the request queue. Our Singing Streams only last an hour, so make sure you get those requests in quickly!
+	</p>
+    
+    <Button link="https://songlist.gozarproductions.com"
+        >View Songlist</Button
+    >
 </Section>
 
 <Section

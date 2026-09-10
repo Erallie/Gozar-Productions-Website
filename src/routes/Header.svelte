@@ -188,11 +188,11 @@
 					<a href="/#code">Our Code</a>
 				</li>
 				<li
-					aria-current={page.url.pathname.startsWith("/#twitch")
+					aria-current={page.url.pathname.startsWith("/#streams")
 						? "page"
 						: undefined}
 				>
-					<a href="/#twitch">Our Twitch</a>
+					<a href="/#streams">Our Streams</a>
 				</li>
 				<li
 					aria-current={page.url.pathname.startsWith(
@@ -206,6 +206,15 @@
 					<span>More</span>
 					<ul>
 						<div class="backdrop"></div>
+                        <li
+							aria-current={page.url.pathname.startsWith(
+								"/#songlist"
+							)
+								? "page"
+								: undefined}
+						>
+							<a href="/#songlist">Our Songlist</a>
+						</li>
 						<li
 							aria-current={page.url.pathname.startsWith(
 								"/#merch"
