@@ -16,9 +16,17 @@
 	</p>
 	<p>
 		This Privacy Policy applies to <strong
-			><a href="/">gozarproductions.com</a></strong
-		>
-		and all of its subdomains, <strong>except for websites, dashboards, or other services associated with Discord bots operated by Gozar Productions</strong>. Discord bots are governed by their own respective privacy policies, even when their websites, dashboards, or other services are hosted on a gozarproductions.com subdomain.
+			><a href="/">gozarproductions.com</a></strong>
+		and its subdomains, except for
+		<strong
+			><a href="https://songlist.gozarproductions.com/"
+				>songlist.gozarproductions.com</a
+			></strong>
+		and websites, dashboards, or other services associated with Discord bots operated
+		by Gozar Productions. Both the songlist website and our
+		Discord bots are governed by their own respective privacy policies, even when
+		their websites, dashboards, or other services are hosted on a gozarproductions.com
+		subdomain.
 	</p>
 	<p>
 		If you have any questions about this policy, feel free to contact us at <a
@@ -41,8 +49,7 @@
 	<a href="#non-essential-cookies">
 		<h4
 			id="non-essential-cookies"
-			style="scroll-margin-top: {$barFinalHeight}px"
-		>
+			style="scroll-margin-top: {$barFinalHeight}px">
 			Non-Essential Cookies
 		</h4>
 	</a>
@@ -61,8 +68,7 @@
 	<a href="#third-party-data">
 		<h3
 			id="third-party-data"
-			style="scroll-margin-top: {$barFinalHeight}px"
-		>
+			style="scroll-margin-top: {$barFinalHeight}px">
 			Third-Party Data Collection
 		</h3>
 	</a>
@@ -112,56 +118,23 @@
 	<p>
 		Our website contains links to third-party platforms and embeds content
 		from external services. These services are not operated by us and may
-		collect data according to their own privacy policies. Please note that
-		embedded content, such as Google Calendar, may store cookies on your
-		device. These include, but are not limited to:
+		collect data according to their own privacy policies. Following an
+		external link takes you to the third party's website or app. Embedded
+		content may allow the provider to process technical information or store
+		cookies on your device when the content loads or when you interact with
+		it. These services include, but are not limited to:
 	</p>
 	<ul>
 		<li>
-			<strong>GitHub, Discord</strong> (linked from
-			<a href="/">gozarproductions.com</a>)
+			<strong>Social, video, and community platforms</strong> – GitHub, Discord,
+			Twitch, YouTube, TikTok, and VRChat.
 		</li>
 		<li>
-			<strong>YouTube </strong> (linked from
-			<a href="/">gozarproductions.com</a> and
-			<a href="https://music.gozarproductions.com/"
-				>music.gozarproductions.com</a
-			>
-			and embedded in
-			<a href="https://disney.gozarproductions.com/" target="_blank"
-				>disney.gozarproductions.com</a
-			>)
+			<strong>Music platforms</strong> – Spotify, Apple Music, YouTube Music,
+			Pandora, and Amazon Music.
 		</li>
 		<li>
-			<strong
-				>Spotify, Apple Music, YouTube Music, Pandora, Amazon Music</strong
-			>
-			(linked from
-			<a href="https://music.gozarproductions.com/"
-				>music.gozarproductions.com</a
-			>)
-		</li>
-		<li>
-			<strong>VRChat</strong>
-			(linked from
-			<a href="https://music.gozarproductions.com/performances"
-				>music.gozarproductions.com/performances</a
-			>
-			and
-			<a href="https://disney.gozarproductions.com/"
-				>disney.gozarproductions.com</a
-			>)
-		</li>
-		<li>
-			<strong>Google Calendar</strong> (embedded in
-			<a
-				href="https://music.gozarproductions.com/performances#calendar"
-				target="_blank">music.gozarproductions.com/performances</a
-			>
-			and
-			<a href="https://calendar.gozarproductions.com/" target="_blank"
-				>calendar.gozarproductions.com</a
-			>)
+			<strong>Embedded content providers</strong> – YouTube and Google Calendar.
 		</li>
 	</ul>
 	<p>
@@ -204,7 +177,7 @@
 		We may update this Privacy Policy from time to time. Any changes will be
 		reflected on this page with an updated revision date.
 	</p>
-	<p><strong>Last Updated:</strong> August 22nd, 2026</p>
+	<p><strong>Last Updated:</strong> September 17th, 2026</p>
 </LegalSection>
 
 <style>
